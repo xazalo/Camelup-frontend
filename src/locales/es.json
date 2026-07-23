@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "info": "Información"
+  },
+  "lobbyEntry": {
+    "create": "Crear una partida",
+    "join": "Unirse a una partida",
+    "name": "Nombre",
+    "namePlace": "Nombre de el jugador",
+    "createLobby": "Crear la sala",
+    "code": "Codígo de la sala",
+    "enter": "Entrar a la sala"
+  },
+  "lobby": {
+    "title": "Sala de espera",
+    "code": "Código:",
+    "copy": "Copiar",
+    "players": "Jugadores",
+    "player": "Jugador",
+    "ai": "IA",
+    "addAI": "Añadir IA",
+    "startGame": "Iniciar partida",
+    "noLobby": "No hay lobby activo"
+  },
+  "homeHero": {
+    "badge": "Edición de Fans",
+    "title": "Camel Up",
+    "subtitle": "El caótico juego de carreras de camellos donde cada tirada puede cambiar al ganador. Apila camellos, haz apuestas inteligentes y supera a tus amigos.",
+    "features": {
+      "stack": "Apila camellos",
+      "multiplayer": "Multijugador en tiempo real",
+      "bets": "Realiza apuestas estratégicas"
+    }
+  },
+  "rules": {
+    "rules": {
+      "title": "Reglas",
+      "description": "Camel Up es un juego de mesa de carreras y apuestas en el que los jugadores intentan predecir qué camellos se desempeñarán mejor durante la carrera. El ganador no es necesariamente el jugador con las tiradas de dados más afortunadas, sino el que toma las mejores decisiones de apuesta en el momento adecuado."
+    },
+    "objective": {
+      "title": "Objetivo",
+      "description": "Gana la mayor cantidad de monedas prediciendo correctamente el resultado de la carrera, haciendo apuestas inteligentes durante cada ronda y usando las losetas de desierto estratégicamente."
+    },
+    "camels": {
+      "title": "Los Camellos",
+      "items": [
+        "Cinco camellos compiten en la carrera.",
+        "Cada camello se mueve cuando se lanza su dado.",
+        "Los camellos pueden apilarse unos encima de otros.",
+        "Si un camello que transporta a otros se mueve, todos los camellos sobre él se mueven juntos.",
+        "Un camello que cae sobre otro camello o pila se coloca encima de esa pila."
+      ]
+    },
+    "actions": {
+      "title": "Acciones del Jugador",
+      "subtitle": "En tu turno, elige exactamente una de las siguientes acciones:",
+      "items": [
+        "Lanzar un dado.",
+        "Tomar una carta de apuesta de ronda.",
+        "Colocar una loseta de desierto.",
+        "Hacer una apuesta al ganador final.",
+        "Hacer una apuesta al perdedor final."
+      ]
+    },
+    "rolling": {
+      "title": "Lanzar el Dado",
+      "items": [
+        "Elige uno de los dados restantes de la pirámide y lánzalo.",
+        "El camello correspondiente avanza según el valor obtenido.",
+        "Recibes inmediatamente una moneda por lanzar el dado.",
+        "Una vez que cada camello se ha movido una vez, la ronda actual termina."
+      ]
+    },
+    "roundBets": {
+      "title": "Apuestas de Ronda",
+      "description": "Durante cada ronda, los jugadores pueden tomar cartas de apuesta para el camello que creen que estará liderando cuando termine la ronda.",
+      "items": [
+        "La primera carta tomada para un camello vale más monedas.",
+        "Las cartas posteriores para el mismo camello valen menos monedas.",
+        "Las apuestas incorrectas pierden una moneda."
+      ]
+    },
+    "finalWinner": {
+      "title": "Apuestas al Ganador Final",
+      "description": "En cualquier momento del juego, los jugadores pueden predecir qué camello ganará toda la carrera.",
+      "items": [
+        "Las apuestas correctas hechas antes reciben mayores recompensas.",
+        "Las apuestas incorrectas pierden una moneda."
+      ]
+    },
+    "finalLoser": {
+      "title": "Apuestas al Perdedor Final",
+      "description": "Los jugadores también pueden predecir qué camello terminará último.",
+      "items": [
+        "Las apuestas correctas hechas antes reciben mayores recompensas.",
+        "Las apuestas incorrectas pierden una moneda."
+      ]
+    },
+    "desertTiles": {
+      "title": "Losetas de Desierto",
+      "description": "Cada jugador posee una loseta de desierto que se puede colocar en un espacio vacío del tablero.",
+      "oasis": "Oasis (+1): El camello se mueve un espacio adicional y termina encima de cualquier pila que haya allí.",
+      "mirage": "Espejismo (-1): El camello retrocede un espacio y se coloca debajo de los camellos que ya estén allí.",
+      "earn": "Cada vez que el camello de otro jugador cae en tu loseta, ganas una moneda."
+    },
+    "endRound": {
+      "title": "Fin de una Ronda",
+      "items": [
+        "Se han lanzado los cinco dados.",
+        "Se puntúan las apuestas de ronda.",
+        "Las losetas de desierto regresan a sus dueños.",
+        "Los dados regresan a la pirámide.",
+        "Comienza una nueva ronda."
+      ]
+    },
+    "endRace": {
+      "title": "Fin de la Carrera",
+      "description": "La carrera termina inmediatamente cuando un camello cruza la línea de meta.",
+      "items": [
+        "Se resuelven las apuestas al ganador final.",
+        "Se resuelven las apuestas al perdedor final.",
+        "El jugador con más monedas gana el juego."
+      ]
+    },
+    "notes": {
+      "title": "Notas",
+      "description": "Esta página resume las reglas para ayudar a los jugadores a comprender la mecánica de esta implementación creada por fans. Para conocer las reglas oficiales completas y la experiencia de juego, apoya el juego de mesa original Camel Up."
+    }
+  },
+  "about": {
+    "about": {
+      "title": "Sobre este proyecto",
+      "p1": "Este proyecto es una recreación personal del juego de mesa Camel Up. Se ha desarrollado puramente con fines educativos, para practicar la arquitectura de software, la comunicación en tiempo real y las tecnologías de desarrollo web moderno.",
+      "p2": "No es una implementación oficial del juego, no está afiliada con los autores o editores originales, y no pretende reemplazar al juego de mesa original de ninguna manera."
+    },
+    "technical": {
+      "title": "Detalles técnicos",
+      "items": [
+        "Construido con Vue 3 y TypeScript.",
+        "Utiliza un servidor Node.js.",
+        "La comunicación en tiempo real se gestiona con Socket.IO.",
+        "No se utiliza ninguna base de datos. Todos los datos de las partidas y salas existen únicamente en la memoria del servidor mientras este se encuentra en ejecución."
+      ]
+    },
+    "purpose": {
+      "title": "Propósito",
+      "description": "El objetivo de este proyecto es aprender, experimentar y mostrar habilidades de programación como parte de mi portafolio y búsqueda de empleo. No tiene la intención de generar ingresos ni de competir con el juego original."
+    },
+    "copyright": {
+      "title": "Aviso de copyright",
+      "p1": "Todos los derechos de Camel Up, su nombre, diseño artístico, mecánicas y propiedad intelectual pertenecen a sus respectivos propietarios.",
+      "p2": "Por favor, no me demanden. 🙏 Este proyecto existe únicamente como un ejercicio educativo hecho por un fan."
+    },
+    "translations": {
+      "title": "Traducciones",
+      "description": "Las traducciones al alemán incluidas en este proyecto fueron generadas con la asistencia de IA y pueden contener imprecisiones. Si notas algún error, no puedo hacer más."
+    }
+  }
+}

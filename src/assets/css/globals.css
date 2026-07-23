@@ -1,0 +1,32 @@
+html {
+    background-color: var(--color-background);
+}
+
+.wrapper {
+    max-width: 40vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.gaper  {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xl)
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .gaper {
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .gaper {
+    gap: var(--space-xl);
+  }
+}
