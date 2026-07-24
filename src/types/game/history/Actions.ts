@@ -1,4 +1,4 @@
-import { TileType } from "@/types/TileType";
+import { TileType } from "@/types/game/TileType";
 
 export type Action =
   | { type: "RollDice" }

@@ -1,5 +1,5 @@
-<script setup>
-import About from "@/components/About.vue";
+<script setup lang="ts">
+import AboutComponent from "@/components/AboutComponent.vue";
 import CamelUpRules from "@/components/CamelUpRules.vue";
 </script>
 
@@ -8,6 +8,6 @@ import CamelUpRules from "@/components/CamelUpRules.vue";
     <CamelUpRules></CamelUpRules>
   </div>
   <div class="wrapper">
-    <About></About>
+    <AboutComponent></AboutComponent>
   </div>
 </template>

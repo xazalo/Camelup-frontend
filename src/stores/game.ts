@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
-import type { Game } from "@/types/Game";
+import type { Game } from "@/types/game/Game";
 
 export const useGameStore = defineStore("game", () => {
   const game = ref<Game | null>(null);

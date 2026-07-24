@@ -2,8 +2,8 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
-import router from './router'
-import i18n from './locales'
+import router from '@/router'
+import i18n from '@/locales'
 
 //load fonts
 import '@fontsource/fredoka/300.css'

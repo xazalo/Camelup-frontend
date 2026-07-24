@@ -1,19 +1,23 @@
 import { onMounted } from "vue";
 import { useGameStore } from "@/stores/game";
 import { onGameStarted } from "@/sockets/update/gameStarted";
-import type { Game } from "@/types/Game";
+import type { Game } from "@/types/game/Game";
 import { onGameError } from "@/sockets/errors/gameError";
 import { startGame } from "@/sockets/emit/startGame";
 
 import { useLobbyStore } from "@/stores/lobby";
-import type { Player } from "@/types/Player";
 
 export function useGame() {
   const gameStore = useGameStore();
   const lobbyStore = useLobbyStore();
 
   function start() {
-    startGame(lobbyStore.lobby?.id!);
+    if (!lobbyStore.lobby?.id) {
+      alert("No lobby id")
+      return
+    } 
+    
+    startGame(lobbyStore.lobby?.id);
   }
 
   onMounted(() => {

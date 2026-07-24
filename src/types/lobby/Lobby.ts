@@ -1,7 +1,4 @@
-interface User {
-    name: string,
-    isAI: boolean
-}
+import type { User } from "@/types/lobby/User"
 
 export interface Lobby {
   id: string

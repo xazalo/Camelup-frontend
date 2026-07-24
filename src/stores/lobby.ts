@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-import type { Lobby } from '@/types/Lobby'
+import type { Lobby } from '@/types/lobby/Lobby'
 
 
 export const useLobbyStore = defineStore('lobby', () => {
