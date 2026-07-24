@@ -1,31 +1,27 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import Space from "@/components/game/board/Space.vue";
-import type { Board } from "@/types/game/board/Board";
+import { useGame } from "@/composables/useGame";
 
-const props = defineProps<{
-  board: Board;
-}>();
+const { board } = useGame();
 
-const boardSize = 600;
-const radius = 240;
+const boardWidth = 600;
+const boardHeight = 500;
+
+const radiusX = 300;
+const radiusY = 180;
+
 const spaceSize = 60;
 
 const positions = computed(() => {
-  return props.board.spaces.map((_, index) => {
-    const angle =
-      (index / props.board.spaces.length) * Math.PI * 2 - Math.PI / 2;
+  if (!board.value) return [];
+
+  return board.value.spaces.map((_: unknown, index: number) => {
+    const angle = (index / board!.value!.spaces.length) * Math.PI * 2 - Math.PI / 2;
 
     return {
-      left:
-        boardSize / 2 +
-        Math.cos(angle) * radius -
-        spaceSize / 2,
-
-      top:
-        boardSize / 2 +
-        Math.sin(angle) * radius -
-        spaceSize / 2,
+      left: boardWidth / 2 + Math.cos(angle) * radiusX - spaceSize / 2,
+      top: boardHeight / 2 + Math.sin(angle) * radiusY - spaceSize / 2,
     };
   });
 });
@@ -33,10 +29,11 @@ const positions = computed(() => {
 
 <template>
   <div
+    v-if="board"
     class="board"
     :style="{
-      width: boardSize + 'px',
-      height: boardSize + 'px',
+      width: boardWidth + 'px',
+      height: boardHeight + 'px',
     }"
   >
     <Space
@@ -45,8 +42,8 @@ const positions = computed(() => {
       :space="space"
       :index="index"
       :style="{
-        left: positions[index].left + 'px',
-        top: positions[index].top + 'px',
+        left: positions[index]!.left + 'px',
+        top: positions[index]!.top + 'px',
       }"
     />
   </div>
@@ -55,7 +52,6 @@ const positions = computed(() => {
 <style scoped>
 .board {
   position: relative;
-  border: 2px solid black;
   border-radius: 50%;
   margin: auto;
 }

@@ -1,4 +1,4 @@
-import { onMounted } from "vue";
+import { onMounted, computed } from "vue";
 import { useGameStore } from "@/stores/game";
 import { onGameStarted } from "@/sockets/update/gameStarted";
 import type { Game } from "@/types/game/Game";
@@ -13,15 +13,15 @@ export function useGame() {
 
   function start() {
     if (!lobbyStore.lobby?.id) {
-      alert("No lobby id")
-      return
-    } 
-    
+      alert("No lobby id");
+      return;
+    }
+
     startGame(lobbyStore.lobby?.id);
   }
 
   onMounted(() => {
-    onGameStarted((game: Game) => {
+    onGameStarted((game) => {
       gameStore.setGame(game);
     });
 
@@ -31,8 +31,11 @@ export function useGame() {
     });
   });
 
+  const board = computed(() => gameStore.game?.board);
+
   return {
     game: gameStore.game,
     start,
+    board,
   };
 }

@@ -5,8 +5,10 @@ import { Icon } from "@iconify/vue";
 import { useLobbyStore } from "@/stores/lobby";
 import { useLobby } from "@/composables/useLobby";
 import { useGame } from "@/composables/useGame";
+import { useRouter } from "vue-router";
 
 const lobbyStore = useLobbyStore();
+const router = useRouter();
 
 const { lobby } = storeToRefs(lobbyStore);
 
@@ -27,6 +29,7 @@ const handleAddAI = () => {
 const handleStartGame = () => {
   if (!lobby.value) return;
   start();
+  router.push({name: 'game'})
 };
 </script>
 

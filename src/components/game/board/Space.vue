@@ -1,20 +1,19 @@
 <script setup lang="ts">
 import type { Stack } from "@/types/game/board/Stack";
-import type { Camel } from "@/types/game/board/Camel";
-import type { Tile } from "@/types/game/board/Tile";
+import Tile from "@/components/game/board/Tile.vue"
+import Camel from "@/components/game/board/Camel.vue";
 
-defineProps<{
+const props = defineProps<{
   space: Stack;
   index: number;
 }>();
+
 </script>
 
 <template>
   <div class="space">
     <div class="number">{{ index + 1 }}</div>
-
     <Camel v-for="(camel, i) in space.camels" :key="camel.color" :camel="camel" :level="i" />
-
     <Tile v-if="space.tile.tileType !== 0" :tile="space.tile" />
   </div>
 </template>

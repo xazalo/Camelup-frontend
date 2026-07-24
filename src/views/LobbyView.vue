@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LobbyRoom from '@/components/LobbyRoom.vue'
+import LobbyRoom from '@/components/lobby/LobbyRoom.vue'
 </script>
 
 <template>
