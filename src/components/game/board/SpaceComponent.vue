@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Stack } from "@/types/game/board/Stack";
-import Tile from "@/components/game/board/Tile.vue"
-import Camel from "@/components/game/board/Camel.vue";
+import TileComponent from "@/components/game/board/TileComponent.vue"
+import CamelComponent from "@/components/game/board/CamelComponent.vue";
 
 const props = defineProps<{
   space: Stack;
@@ -13,8 +13,8 @@ const props = defineProps<{
 <template>
   <div class="space">
     <div class="number">{{ index + 1 }}</div>
-    <Camel v-for="(camel, i) in space.camels" :key="camel.color" :camel="camel" :level="i" />
-    <Tile v-if="space.tile.tileType !== 0" :tile="space.tile" />
+    <CamelComponent v-for="(camel, i) in props.space.camels" :key="camel.color" :camel="camel" :level="i" />
+    <TileComponent v-if="props.space.tile.tileType !== 0" :tile="props.space.tile" />
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import Space from "@/components/game/board/Space.vue";
+import SpaceComponent from "@/components/game/board/SpaceComponent.vue";
 import { useGame } from "@/composables/useGame";
 
 const { board } = useGame();
@@ -36,7 +36,7 @@ const positions = computed(() => {
       height: boardHeight + 'px',
     }"
   >
-    <Space
+    <SpaceComponent
       v-for="(space, index) in board.spaces"
       :key="index"
       :space="space"

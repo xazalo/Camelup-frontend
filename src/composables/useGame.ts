@@ -1,7 +1,6 @@
 import { onMounted, computed } from "vue";
 import { useGameStore } from "@/stores/game";
 import { onGameStarted } from "@/sockets/update/gameStarted";
-import type { Game } from "@/types/game/Game";
 import { onGameError } from "@/sockets/errors/gameError";
 import { startGame } from "@/sockets/emit/startGame";
 
