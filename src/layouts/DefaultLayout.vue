@@ -15,7 +15,7 @@ import BottomNav from "@/components/nav/BottomNav.vue";
 
 <style scoped>
 .default-layout {
-  min-height: auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -32,7 +32,7 @@ import BottomNav from "@/components/nav/BottomNav.vue";
 @media (max-width: 768px) {
   .main-container {
     min-height: auto;
-    margin: var(--space-xl);
+    margin: var(--space-5xl);
     gap: var(--space-2xl);
     flex-direction: column;
     justify-content: flex-start;
@@ -41,7 +41,7 @@ import BottomNav from "@/components/nav/BottomNav.vue";
 
 @media (max-width: 480px) {
   .main-container {
-    margin: var(--space-md);
+    margin: var(--space-2xl);
     gap: var(--space-xl);
   }
 }

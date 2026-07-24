@@ -45,6 +45,7 @@ const changeLanguage = (lang: string) => {
   justify-content: space-between;
   height: 10vh;
   max-height: 10vh;
+  margin-top: auto;
   padding: var(--space-md) var(--space-5xl);
   background: var(--color-primary);
   color: var(--color-surface);
