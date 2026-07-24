@@ -25,9 +25,9 @@ export function useLobby() {
       });
     });
 
-    onLobbyError(({ message }) => {
-      console.error(message);
-      alert(message);
+    onLobbyError((response) => {
+      console.error(response);
+      alert(response.message);
     });
   });
 
@@ -43,13 +43,10 @@ export function useLobby() {
     addAI(gameId);
   }
 
-  function startGame() {}
-
   return {
     lobby: lobbyStore.lobby,
     create,
     join,
     addOneAI,
-    startGame,
   };
 }

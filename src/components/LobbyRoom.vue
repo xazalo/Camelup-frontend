@@ -4,12 +4,14 @@ import { Icon } from "@iconify/vue";
 
 import { useLobbyStore } from "@/stores/lobby";
 import { useLobby } from "@/composables/useLobby";
+import { useGame } from "@/composables/useGame";
 
 const lobbyStore = useLobbyStore();
 
 const { lobby } = storeToRefs(lobbyStore);
 
-const { addOneAI, startGame } = useLobby();
+const { addOneAI } = useLobby();
+const { start } = useGame();
 
 const copyLobbyCode = async () => {
   if (!lobby.value) return;
@@ -24,7 +26,7 @@ const handleAddAI = () => {
 
 const handleStartGame = () => {
   if (!lobby.value) return;
-  //startGame();
+  start();
 };
 </script>
 
