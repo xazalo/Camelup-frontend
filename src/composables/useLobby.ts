@@ -11,7 +11,7 @@ export function useLobby() {
   const lobbyStore = useLobbyStore();
 
   onMounted(() => {
-    onLobbyCreated(({ lobbyId, players }) => {
+    onLobbyCreated(({ id: lobbyId, players }) => {
       lobbyStore.setLobby({
         id: lobbyId,
         players,
