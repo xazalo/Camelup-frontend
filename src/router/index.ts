@@ -5,7 +5,7 @@ import DefaultLayout from '@/layouts/DefaultLayout.vue'
 
 import HomeView from '@/views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
-import LobbyRoom from '@/components/LobbyRoom.vue'
+import LobbyRoom from '@/components/lobby/LobbyRoom.vue'
 
 const router = createRouter({
   history: createWebHistory(),

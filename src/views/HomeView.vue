@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import HomeHero from "@/components/HomeHero.vue";
-import LobbyEntry from "@/components/LobbyEntry.vue";
+import LobbyEntry from "@/components/lobby/LobbyEntry.vue";
 </script>
 
 <template>
