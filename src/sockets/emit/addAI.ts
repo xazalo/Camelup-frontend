@@ -1,5 +1,4 @@
-import type { Player } from "@/types/Player";
-import { socket } from "../socket";
+import { socket } from "@/sockets/socket";
 
 export function addAI(gameId: string) {
     socket.emit("addAI", {

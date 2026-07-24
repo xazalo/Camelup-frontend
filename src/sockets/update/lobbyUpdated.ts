@@ -1,5 +1,6 @@
-import { socket } from "../socket";
+import { socket } from "@/sockets/socket";
+import type { Lobby } from "@/types/lobby/Lobby";
 
-export function onLobbyUpdated(callback: (data: any) => void) {
+export function onLobbyUpdated(callback: (data: Lobby) => void) {
   socket.on("lobbyUpdated", callback);
 }
