@@ -156,5 +156,19 @@
       "title": "Traducciones",
       "description": "Las traducciones al alemán incluidas en este proyecto fueron generadas con la asistencia de IA y pueden contener imprecisiones. Si notas algún error, no puedo hacer más."
     }
+  },
+  "actionsMenu": {
+    "rollDice": "🎲 Tirar dado",
+    "placeTile": "🧱 Colocar loseta",
+    "winnerBet": "🏆 Apostar ganador",
+    "loserBet": "💀 Apostar perdedor",
+    "terminal": "📜 Terminal",
+    "exit": "⚠️ Salir",
+    "selectColor": "Seleccionar color",
+    "cancel": "Cancelar"
+  },
+  "colorSelector": {
+    "title": "Seleccionar color",
+    "cancel": "Cancelar"
   }
 }

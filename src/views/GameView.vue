@@ -2,6 +2,7 @@
 import BoardComponent from "@/components/game/board/BoardComponent.vue";
 import RollComponent from "@/components/game/pyramid/RollComponent.vue";
 import PlayerSchedule from "@/components/game/playerSchedule/PlayerSchedule.vue";
+import ActionsMenu from "@/components/game/actionsMenu/ActionsMenu.vue";
 </script>
 
 <template>
@@ -17,7 +18,7 @@ import PlayerSchedule from "@/components/game/playerSchedule/PlayerSchedule.vue"
     </section>
 
     <section class="actions">
-      <!--Actions Menu-->
+      <ActionsMenu />
     </section>
   </div>
 </template>

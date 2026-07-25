@@ -3,8 +3,8 @@ import { useGameStore } from "@/stores/game";
 import { onGameStarted } from "@/sockets/update/gameStarted";
 import { onGameError } from "@/sockets/errors/gameError";
 import { startGame } from "@/sockets/emit/startGame";
-
 import { useLobbyStore } from "@/stores/lobby";
+import { useStorage } from "./useStorage";
 
 export function useGame() {
   const gameStore = useGameStore();
@@ -52,14 +52,20 @@ export function useGame() {
   });
 
   const availableActions = computed(() => {
-    
-  })
+    const { getName } = useStorage();
+    const name = getName();
+
+    const player = gameStore.game?.players.find((p) => p.name === name);
+
+    return player?.availableActions;
+  });
 
   return {
     game: gameStore.game,
     start,
     board,
     rolledDices,
-    players
+    players,
+    availableActions,
   };
 }
