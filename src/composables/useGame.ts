@@ -31,7 +31,7 @@ export function useGame() {
   });
 
   const board = computed(() => gameStore.game?.board);
-  
+
   const rolledDices = computed(() => {
     const rounds = gameStore.game?.history;
 
@@ -47,10 +47,15 @@ export function useGame() {
     }));
   });
 
+  const players = computed(() => {
+    return gameStore.game?.players;
+  });
+
   return {
     game: gameStore.game,
     start,
     board,
     rolledDices,
+    players
   };
 }

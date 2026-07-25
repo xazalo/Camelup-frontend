@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import BoardComponent from "@/components/game/board/BoardComponent.vue";
 import RollComponent from "@/components/game/pyramid/RollComponent.vue";
+import PlayerSchedule from "@/components/game/playerSchedule/PlayerSchedule.vue";
 </script>
 
 <template>
@@ -11,8 +12,7 @@ import RollComponent from "@/components/game/pyramid/RollComponent.vue";
 
     <section class="sidebar">
       <RollComponent />
-
-      <!--<PlayerComponent />-->
+      <PlayerSchedule />
       <!--Terminal-->
     </section>
 
