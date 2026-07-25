@@ -5,13 +5,13 @@ import { useGame } from "@/composables/useGame";
 
 const { board } = useGame();
 
-const boardWidth = 600;
+const boardWidth = 800;
 const boardHeight = 500;
 
 const radiusX = 300;
 const radiusY = 180;
 
-const spaceSize = 60;
+const spaceSize = 0;
 
 const positions = computed(() => {
   if (!board.value) return [];
@@ -49,10 +49,10 @@ const positions = computed(() => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .board {
-  position: relative;
-  border-radius: 50%;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

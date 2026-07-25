@@ -31,10 +31,26 @@ export function useGame() {
   });
 
   const board = computed(() => gameStore.game?.board);
+  
+  const rolledDices = computed(() => {
+    const rounds = gameStore.game?.history;
+
+    if (!rounds || rounds.length === 0) {
+      return [];
+    }
+
+    const lastRound = rounds[rounds.length - 1];
+
+    return lastRound!.rolledDice.map((dice) => ({
+      color: dice.color,
+      value: dice.number,
+    }));
+  });
 
   return {
     game: gameStore.game,
     start,
     board,
+    rolledDices,
   };
 }
