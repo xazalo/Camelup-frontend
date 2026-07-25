@@ -51,6 +51,10 @@ export function useGame() {
     return gameStore.game?.players;
   });
 
+  const availableActions = computed(() => {
+    
+  })
+
   return {
     game: gameStore.game,
     start,
