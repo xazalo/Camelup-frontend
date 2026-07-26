@@ -12,6 +12,7 @@
   "compilerOptions": {
     // Extra safety for array and object lookups, but may have false positives.
     "noUncheckedIndexedAccess": true,
+    "ignoreDeprecations": "6.0",
 
     // Path mapping for cleaner imports.
     "baseUrl": ".",
@@ -24,7 +25,8 @@
       "@sockets/*": ["src/sockets/*"],
       "@utils/*": ["src/utils/*"],
       "@composables/*": ["src/composables/*"],
-      "@locales/*": ["src/locales/*"]
+      "@locales/*": ["src/locales/*"],
+      "@bootstrap/": ["src/bootstrap/*"]
     },
 
     // `vue-tsc --build` produces a .tsbuildinfo file for incremental type-checking.

@@ -1,118 +1,85 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
-import { useRouter } from 'vue-router'
-import { storeToRefs } from 'pinia'
+import { ref, watch } from "vue";
+import { useRouter } from "vue-router";
+import { storeToRefs } from "pinia";
 
-import { useLobby } from '@/composables/useLobby'
-import { useLobbyStore } from '@/stores/lobby'
+import { useLobby } from "@/composables/useLobby";
+import { useLobbyStore } from "@/stores/lobby";
 
-const router = useRouter()
+const router = useRouter();
 
-const { create, join } = useLobby()
+const { create, join } = useLobby();
 
-const lobbyStore = useLobbyStore()
-const { lobby } = storeToRefs(lobbyStore)
+const lobbyStore = useLobbyStore();
+const { lobby } = storeToRefs(lobbyStore);
 
-const mode = ref<'create' | 'join'>('create')
+const mode = ref<"create" | "join">("create");
 
-const username = ref('')
-const lobbyIp = ref('')
-
+const username = ref("");
+const lobbyIp = ref("");
 
 watch(
   lobby,
   (value) => {
     if (value) {
-      router.push({ name: 'lobby' })
+      router.push({ name: "lobby" });
     }
   },
-  { immediate: true }
-)
-
+  { immediate: true },
+);
 
 const handleCreate = () => {
-  if (!username.value) return
-  create(username.value)
-}
-
+  if (!username.value) return;
+  create(username.value);
+};
 
 const handleJoin = () => {
-  if (!username.value || !lobbyIp.value) return
-
-  join(
-    lobbyIp.value,
-    username.value
-  )
-}
+  if (!username.value || !lobbyIp.value) return;
+  join(lobbyIp.value, username.value);
+};
 </script>
 
 <template>
   <section class="menu-container info-section">
     <nav class="lobby-nav">
-      <button
-        type="button"
-        :disabled="mode === 'create'"
-        @click="mode = 'create'"
-      >
+      <button type="button" :disabled="mode === 'create'" @click="mode = 'create'">
         {{ $t("lobbyEntry.create") }}
       </button>
 
-      <button
-        type="button"
-        :disabled="mode === 'join'"
-        @click="mode = 'join'"
-      >
+      <button type="button" :disabled="mode === 'join'" @click="mode = 'join'">
         {{ $t("lobbyEntry.join") }}
       </button>
     </nav>
 
-    <form
-      v-if="mode === 'create'"
-      @submit.prevent="handleCreate"
-    >
+    <form v-if="mode === 'create'" @submit.prevent="handleCreate">
       <label>
         {{ $t("lobbyEntry.name") }}
       </label>
 
-      <input
-        v-model="username"
-        :placeholder="$t('lobbyEntry.namePlace')"
-      />
+      <input v-model="username" :placeholder="$t('lobbyEntry.namePlace')" />
 
       <button type="submit">
         {{ $t("lobbyEntry.createLobby") }}
       </button>
     </form>
 
-    <form
-      v-else
-      @submit.prevent="handleJoin"
-    >
+    <form v-else @submit.prevent="handleJoin">
       <label>
         {{ $t("lobbyEntry.name") }}
       </label>
 
-      <input
-        v-model="username"
-        :placeholder="$t('lobbyEntry.namePlace')"
-      />
-
+      <input v-model="username" :placeholder="$t('lobbyEntry.namePlace')" />
 
       <label>
         {{ $t("lobbyEntry.code") }}
       </label>
 
-      <input
-        v-model="lobbyIp"
-        placeholder="ABC123"
-      />
-
+      <input v-model="lobbyIp" placeholder="ABC123" />
 
       <button type="submit">
         {{ $t("lobbyEntry.enter") }}
       </button>
     </form>
-
   </section>
 </template>
 

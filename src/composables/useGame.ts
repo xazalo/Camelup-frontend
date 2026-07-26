@@ -1,10 +1,9 @@
-import { onMounted, computed } from "vue";
+import { computed } from "vue";
 import { useGameStore } from "@/stores/game";
-import { onGameStarted } from "@/sockets/update/gameStarted";
-import { onGameError } from "@/sockets/errors/gameError";
 import { startGame } from "@/sockets/emit/startGame";
 import { useLobbyStore } from "@/stores/lobby";
-import { useStorage } from "./useStorage";
+
+import { storage } from "@/utils/storage";
 
 export function useGame() {
   const gameStore = useGameStore();
@@ -12,23 +11,10 @@ export function useGame() {
 
   function start() {
     if (!lobbyStore.lobby?.id) {
-      alert("No lobby id");
       return;
     }
-
     startGame(lobbyStore.lobby?.id);
   }
-
-  onMounted(() => {
-    onGameStarted((game) => {
-      gameStore.setGame(game);
-    });
-
-    onGameError((response) => {
-      console.error(response);
-      alert(response.message);
-    });
-  });
 
   const board = computed(() => gameStore.game?.board);
 
@@ -52,9 +38,7 @@ export function useGame() {
   });
 
   const availableActions = computed(() => {
-    const { getName } = useStorage();
-    const name = getName();
-
+    const name = storage.getName();
     const player = gameStore.game?.players.find((p) => p.name === name);
 
     return player?.availableActions;

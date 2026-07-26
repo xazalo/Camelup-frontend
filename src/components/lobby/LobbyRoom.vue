@@ -29,7 +29,7 @@ const handleAddAI = () => {
 const handleStartGame = () => {
   if (!lobby.value) return;
   start();
-  router.push({name: 'game'})
+  //TODO: Add loading screen
 };
 </script>
 

@@ -2,7 +2,7 @@
 defineProps<{
   label: string;
   disabled?: boolean;
-  type?: "normal" | "terminal" | "exit";
+  type?: "normal" | "exit";
 }>();
 
 defineEmits<{
@@ -48,17 +48,6 @@ defineEmits<{
   color: var(--color-text-muted);
   cursor: not-allowed;
   opacity: .6;
-}
-
-
-.terminal {
-  background: black;
-  color: #ffe100;
-  font-family: monospace;
-}
-
-.terminal:hover {
-  color: #00ffaa;
 }
 
 

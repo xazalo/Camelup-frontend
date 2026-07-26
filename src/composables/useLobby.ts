@@ -1,35 +1,10 @@
-import { onMounted } from "vue";
 import { useLobbyStore } from "@/stores/lobby";
 import { createLobby } from "@/sockets/emit/createLobby";
 import { joinLobby } from "@/sockets/emit/joinLobby";
-import { onLobbyUpdated } from "@/sockets/update/lobbyUpdated";
-import { onLobbyCreated } from "@/sockets/update/lobbyCreated";
-import { onLobbyError } from "@/sockets/errors/lobbyError";
 import { addAI } from "@/sockets/emit/addAI";
 
 export function useLobby() {
   const lobbyStore = useLobbyStore();
-
-  onMounted(() => {
-    onLobbyCreated(({ id: lobbyId, players }) => {
-      lobbyStore.setLobby({
-        id: lobbyId,
-        players,
-      });
-    });
-
-    onLobbyUpdated((data) => {
-      lobbyStore.setLobby({
-        id: lobbyStore.lobby?.id ?? "",
-        players: data.players,
-      });
-    });
-
-    onLobbyError((response) => {
-      console.error(response);
-      alert(response.message);
-    });
-  });
 
   function create(name: string) {
     createLobby({ name, isAI: false });

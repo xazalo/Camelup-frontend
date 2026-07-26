@@ -17,7 +17,6 @@ const emit = defineEmits<{
 
 
 function getType(key: string) {
-  if (key === "terminal") return "terminal";
   if (key === "exit") return "exit";
 
   return "normal";
@@ -43,24 +42,17 @@ function getType(key: string) {
 <style scoped>
 .actions-menu {
   position: fixed;
-
   left: var(--space-xl);
   right: var(--space-xl);
   bottom: var(--space-xl);
-
   display: flex;
   justify-content: center;
   gap: var(--space-md);
-
   padding: var(--space-lg);
-
   background: var(--color-surface);
-
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-xl);
-
   box-shadow: var(--shadow-lg);
-
   z-index:100;
 }
 </style>
