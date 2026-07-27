@@ -32,18 +32,21 @@ function confirm() {
 <template>
   <div class="overlay">
     <div class="dialog">
-      <h2>Select tile</h2>
+      <h2>{{ $t("tileSelector.title") }}</h2>
 
       <div class="content">
         <input
           v-model.number="position"
           type="number"
-          placeholder="Position"
+          :placeholder="$t('tileSelector.position')"
         />
 
         <select v-model="tileType">
-          <option disabled value="">
-            Select type
+          <option
+            disabled
+            value=""
+          >
+            {{ $t("tileSelector.type") }}
           </option>
 
           <option
@@ -60,14 +63,14 @@ function confirm() {
             class="confirm-btn"
             @click="confirm"
           >
-            Confirm
+            {{ $t("tileSelector.confirm") }}
           </button>
 
           <button
             class="cancel-btn"
             @click="$emit('close')"
           >
-            Cancel
+            {{ $t("tileSelector.cancel") }}
           </button>
         </div>
       </div>

@@ -170,5 +170,12 @@
   "colorSelector": {
     "title": "Seleccionar color",
     "cancel": "Cancelar"
+  },
+  "tileSelector": {
+    "title": "Seleccionar loseta",
+    "position": "Posición",
+    "type": "Selecciona un tipo",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar"
   }
 }
