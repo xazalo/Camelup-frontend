@@ -6,91 +6,84 @@ import { placeLoserBet } from "@/sockets/emit/placeLoserBet";
 import { storage } from "@/utils/storage";
 
 export function useActions() {
+  function getPlayerData() {
+    const gameId = storage.getId();
+    const playerName = storage.getName();
+    const playerId = storage.getPlayerId();
 
-    function getPlayerData() {
-        const gameId = storage.getId();
-        const playerName = storage.getName();
-
-        if (
-            typeof gameId !== "string" ||
-            typeof playerName !== "string"
-        ) {
-            console.error("Missing player data");
-            return null;
-        }
-
-        return {
-            gameId,
-            playerName,
-        };
-    }
-
-
-    function rollTheDiceAction() {
-        const player = getPlayerData();
-        if (!player) return;
-
-        rollTheDice(player);
-    }
-
-
-    function takeRoundBetAction(camelColor: string) {
-        const player = getPlayerData();
-
-        if (!player) return;
-
-        takeRoundBet({
-            ...player,
-            camelColor,
-        });
-    }
-
-
-    function placeWinnerBetAction(camelColor: string) {
-        const player = getPlayerData();
-
-        if (!player) return;
-
-        placeWinnerBet({
-            ...player,
-            camelColor,
-        });
-    }
-
-
-    function placeLoserBetAction(camelColor: string) {
-        const player = getPlayerData();
-
-        if (!player) return;
-
-        placeLoserBet({
-            ...player,
-            camelColor,
-        });
-    }
-
-
-    function placeTileAction(
-        position: number,
-        tileType: string,
+    if (
+      typeof gameId !== "string" ||
+      typeof playerName !== "string" ||
+      typeof playerId !== "string"
     ) {
-        const player = getPlayerData();
-
-        if (!player) return;
-
-        placeTile({
-            ...player,
-            position,
-            tileType,
-        });
+      console.error("Missing player data");
+      return null;
     }
-
 
     return {
-        rollTheDiceAction,
-        takeRoundBetAction,
-        placeWinnerBetAction,
-        placeLoserBetAction,
-        placeTileAction,
+      gameId,
+      playerName,
+      playerId,
     };
+  }
+
+  function rollTheDiceAction() {
+    const player = getPlayerData();
+    if (!player) return;
+
+    rollTheDice(player);
+  }
+
+  function takeRoundBetAction(camelColor: string) {
+    const player = getPlayerData();
+
+    if (!player) return;
+
+    takeRoundBet({
+      ...player,
+      camelColor,
+    });
+  }
+
+  function placeWinnerBetAction(camelColor: string) {
+    const player = getPlayerData();
+
+    if (!player) return;
+
+    placeWinnerBet({
+      ...player,
+      camelColor,
+    });
+  }
+
+  function placeLoserBetAction(camelColor: string) {
+    const player = getPlayerData();
+
+    if (!player) return;
+
+    placeLoserBet({
+      ...player,
+      camelColor,
+    });
+  }
+
+  function placeTileAction(position: number, tileType: string) {
+    const player = getPlayerData();
+
+    if (!player) return;
+
+    placeTile({
+      ...player,
+      position,
+      tileType,
+    });
+  }
+
+  return {
+    rollTheDiceAction,
+    takeRoundBetAction,
+    placeWinnerBetAction,
+    placeLoserBetAction,
+    placeTileAction,
+  };
 }
