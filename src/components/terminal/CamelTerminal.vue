@@ -1,15 +1,20 @@
 <script setup lang="ts">
 import { ref, nextTick, watch } from "vue";
 import { useLogs } from "@/composables/useLogs";
+import { Icon } from "@iconify/vue";
 
 const { logs } = useLogs();
 
 const isOpen = ref(false);
 const terminalRef = ref<HTMLElement | null>(null);
 
+const command = ref("");
+
 function toggleTerminal() {
   isOpen.value = !isOpen.value;
 }
+
+function executeCommand() {}
 
 function closeTerminal() {
   isOpen.value = false;
@@ -29,13 +34,13 @@ watch(
 </script>
 
 <template>
-  <button v-if="!isOpen" class="terminal-button" @click="toggleTerminal">Terminal</button>
+  <button v-if="!isOpen" class="terminal-button" @click="toggleTerminal"><Icon icon="lucide:square-chevron-right" /></button>
 
   <div v-if="isOpen" class="terminal">
     <header class="terminal-header">
       <span>Console</span>
 
-      <button @click="closeTerminal">✕</button>
+      <button class="terminal-btn" @click="closeTerminal">✕</button>
     </header>
 
     <div ref="terminalRef" class="terminal-body">
@@ -54,6 +59,18 @@ watch(
         [{{ log.type }}] {{ log.message }}
       </div>
     </div>
+
+    <div class="terminal-input-wrapper">
+      <input
+        class="terminal-input"
+        v-model="command"
+        type="text"
+        placeholder="Enter command..."
+        @keyup.enter="executeCommand"
+      />
+
+      <button class="terminal-send-button" @click="executeCommand">></button>
+    </div>
   </div>
 </template>
 
@@ -62,6 +79,27 @@ watch(
   position: fixed;
   top: 20px;
   left: 20px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #222;
+  color: var(--color-primary-text);
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  box-shadow: var(--shadow-md);
+
+  transition: var(--transition-fast);
 }
 
 .terminal {
@@ -69,11 +107,14 @@ watch(
   top: 20px;
   left: 20px;
 
+  display: flex;
+  flex-direction: column;
+
   width: 500px;
   height: 300px;
 
   background: #111;
-  color: white;
+  color: var(--color-primary-text);
 
   border-radius: 8px;
   overflow: hidden;
@@ -86,8 +127,16 @@ watch(
   background: #222;
 }
 
+.terminal-btn {
+  background-color: var(--color-danger);
+  color: var(--color-primary-text);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 300%;
+}
+
 .terminal-body {
-  height: calc(100% - 40px);
+  flex: 1;
   overflow-y: auto;
   padding: 10px;
 
@@ -95,20 +144,37 @@ watch(
   font-size: 13px;
 }
 
+.terminal-input-wrapper {
+  display: flex;
+}
+
+.terminal-input {
+  width: 100%;
+  border-top: 1px solid var(--color-primary-text);
+  background-color: #222;
+  color: var(--color-primary-text);
+}
+
+.terminal-send-button {
+  background-color: var(--color-danger);
+  width: 2rem;
+  color: var(--color-primary-text);
+}
+
 .log-line {
   margin-bottom: 4px;
-  color: white;
+  color: var(--color-primary-text);
 }
 
 .info {
-  color: #4da6ff;
+  color: var(--color-info);
 }
 
 .error {
-  color: #ff5555;
+  color: var(--color-danger);
 }
 
 .log {
-  color: #fbecec;
+  color: var(--color-primary-text);
 }
 </style>
