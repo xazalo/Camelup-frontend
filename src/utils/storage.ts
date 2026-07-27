@@ -1,4 +1,12 @@
 export const storage = {
+  savePlayerId(playerId: string) {
+    localStorage.setItem("playerId", playerId);
+  },
+
+  getPlayerId() {
+    return localStorage.getItem("playerId");
+  },
+
   saveId(id: string) {
     localStorage.setItem("id", id);
   },

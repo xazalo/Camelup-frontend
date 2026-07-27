@@ -15,6 +15,7 @@ import { storage } from "@/utils/storage";
 import { onGameLaunched } from "@/sockets/update/launchGame";
 
 import router from "@/router";
+import { onPlayerId } from "@/sockets/update/playerId";
 
 export function initGame() {
   const gameStore = useGameStore();
@@ -23,9 +24,13 @@ export function initGame() {
     gameStore.setGame(game);
   });
 
+  onPlayerId((data) => {
+    storage.savePlayerId(data.playerId);
+  });
+
   onGameLaunched(() => {
     router.push({ name: "game" });
-  })
+  });
 
   onGameStateUpdated((game) => {
     gameStore.setGame(game);
