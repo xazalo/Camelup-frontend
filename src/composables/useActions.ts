@@ -4,6 +4,7 @@ import { placeWinnerBet } from "@/sockets/emit/placeWinnerBet";
 import { placeTile } from "@/sockets/emit/placeTile";
 import { placeLoserBet } from "@/sockets/emit/placeLoserBet";
 import { storage } from "@/utils/storage";
+import type { AvailableActions } from "@/types/game/players/AvailableActions";
 
 export function useActions() {
   function getPlayerData() {

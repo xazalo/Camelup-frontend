@@ -1,6 +1,13 @@
 export interface AvailableActions {
   rollDice: boolean;
 
+  roundBet: {
+    blue:  boolean,
+    green: boolean,
+    red: boolean,
+    yellow: boolean,
+  }
+
   winnerBet: {
     blue: boolean,
     green: boolean,

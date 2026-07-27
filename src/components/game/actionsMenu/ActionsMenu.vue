@@ -12,14 +12,29 @@ const { t } = useI18n();
 
 const { availableActions } = useGame();
 
-const { rollTheDiceAction, placeWinnerBetAction, placeLoserBetAction, placeTileAction } =
-  useActions();
+const {
+  rollTheDiceAction,
+  placeWinnerBetAction,
+  placeLoserBetAction,
+  placeTileAction,
+  takeRoundBetAction,
+} = useActions();
 
-const selectedColorAction = ref<"winnerBet" | "loserBet" | null>(null);
+const selectedColorAction = ref<
+  "roundBet" | "winnerBet" | "loserBet" | null
+>(null);
+
 const showTileSelector = ref(false);
 
-function hasAvailableColors(colors?: Record<string, boolean>) {
-  return !!colors && Object.values(colors).some(Boolean);
+function hasAvailableColors(
+  colors?: Record<string, boolean | { available: boolean }>,
+) {
+  return (
+    !!colors &&
+    Object.values(colors).some((color) =>
+      typeof color === "boolean" ? color : color.available,
+    )
+  );
 }
 
 const actions = computed(() => [
@@ -32,6 +47,11 @@ const actions = computed(() => [
     key: "placeTile",
     label: t("actionsMenu.placeTile"),
     enabled: !!availableActions.value?.placeTile,
+  },
+  {
+    key: "roundBet",
+    label: t("actionsMenu.roundBet"),
+    enabled: hasAvailableColors(availableActions.value?.roundBet),
   },
   {
     key: "winnerBet",
@@ -54,6 +74,10 @@ function actionSelected(key: string) {
   switch (key) {
     case "rollDice":
       rollTheDiceAction();
+      break;
+
+    case "roundBet":
+      selectedColorAction.value = "roundBet";
       break;
 
     case "winnerBet":
@@ -80,6 +104,10 @@ function tileSelected(data: { position: number; tileType: string }) {
 }
 
 function colorSelected(color: string) {
+  if (selectedColorAction.value === "roundBet") {
+    takeRoundBetAction(color);
+  }
+
   if (selectedColorAction.value === "winnerBet") {
     placeWinnerBetAction(color);
   }
@@ -94,10 +122,24 @@ function colorSelected(color: string) {
 function closeSelector() {
   selectedColorAction.value = null;
 }
+
+const roundBetColors = computed(() => ({
+  blue: availableActions.value?.roundBet.blue ?? false,
+  green: availableActions.value?.roundBet.green ?? false,
+  red: availableActions.value?.roundBet.red ?? false,
+  yellow: availableActions.value?.roundBet.yellow ?? false,
+}));
 </script>
 
 <template>
   <ActionsStack :actions="actions" @action="actionSelected" />
+
+  <ColorSelector
+    v-if="selectedColorAction === 'roundBet'"
+    :colors="roundBetColors"
+    @select="colorSelected"
+    @close="closeSelector"
+  />
 
   <ColorSelector
     v-if="selectedColorAction === 'winnerBet'"
@@ -113,5 +155,9 @@ function closeSelector() {
     @close="closeSelector"
   />
 
-  <TileSelector v-if="showTileSelector" @select="tileSelected" @close="showTileSelector = false" />
+  <TileSelector
+    v-if="showTileSelector"
+    @select="tileSelected"
+    @close="showTileSelector = false"
+  />
 </template>

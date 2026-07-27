@@ -158,6 +158,7 @@
     }
   },
   "actionsMenu": {
+    "roundBet": "👉🏻 Apuesta de Ronda",
     "rollDice": "🎲 Tirar dado",
     "placeTile": "🧱 Colocar loseta",
     "winnerBet": "🏆 Apostar ganador",
