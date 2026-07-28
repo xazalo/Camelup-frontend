@@ -5,6 +5,10 @@ import type { Player } from "@/types/game/players/Player";
 defineProps<{
   players: Player[];
 }>();
+
+const emit = defineEmits<{
+  select: [player: Player];
+}>();
 </script>
 
 <template>
@@ -13,6 +17,7 @@ defineProps<{
       v-for="player in players"
       :key="player.name"
       class="player"
+      @click="emit('select', player)"
     >
       <div class="player-info">
         <div class="avatar">
@@ -51,6 +56,13 @@ defineProps<{
   border-radius: var(--radius-md);
 
   box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.player:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .player-info {
