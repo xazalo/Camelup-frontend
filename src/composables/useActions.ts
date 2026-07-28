@@ -68,7 +68,7 @@ export function useActions() {
     });
   }
 
-  function placeTileAction(position: number, tileType: string) {
+  function placeTileAction(position: number, tileType: number) {
     const player = getPlayerData();
 
     if (!player) return;

@@ -12,7 +12,7 @@ const props = defineProps<{
 
 <template>
   <div class="space">
-    <div class="number">{{ index + 1 }}</div>
+    <div class="number">{{ index }}</div>
     <CamelComponent v-for="(camel, i) in props.space.camels" :key="camel.color" :camel="camel" :level="i" />
     <TileComponent v-if="props.space.tile.tileType !== 0" :tile="props.space.tile" />
   </div>

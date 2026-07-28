@@ -20,20 +20,14 @@ const {
   takeRoundBetAction,
 } = useActions();
 
-const selectedColorAction = ref<
-  "roundBet" | "winnerBet" | "loserBet" | null
->(null);
+const selectedColorAction = ref<"roundBet" | "winnerBet" | "loserBet" | null>(null);
 
 const showTileSelector = ref(false);
 
-function hasAvailableColors(
-  colors?: Record<string, boolean | { available: boolean }>,
-) {
+function hasAvailableColors(colors?: Record<string, boolean | { available: boolean }>) {
   return (
     !!colors &&
-    Object.values(colors).some((color) =>
-      typeof color === "boolean" ? color : color.available,
-    )
+    Object.values(colors).some((color) => (typeof color === "boolean" ? color : color.available))
   );
 }
 
@@ -46,7 +40,7 @@ const actions = computed(() => [
   {
     key: "placeTile",
     label: t("actionsMenu.placeTile"),
-    enabled: !!availableActions.value?.placeTile,
+    enabled: availableActions.value?.placeTile.some((available) => available) ?? false,
   },
   {
     key: "roundBet",
@@ -98,7 +92,7 @@ function actionSelected(key: string) {
 }
 
 function tileSelected(data: { position: number; tileType: string }) {
-  placeTileAction(data.position, data.tileType);
+  placeTileAction(data.position, parseInt(data.tileType));
 
   showTileSelector.value = false;
 }
@@ -157,6 +151,7 @@ const roundBetColors = computed(() => ({
 
   <TileSelector
     v-if="showTileSelector"
+    :available-tiles="availableActions?.placeTile as boolean[]"
     @select="tileSelected"
     @close="showTileSelector = false"
   />

@@ -22,5 +22,5 @@ export interface AvailableActions {
     yellow: boolean,
   };
 
-  placeTile: boolean;
+  placeTile: boolean[],
 }

@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
+
+const props = defineProps<{
+  availableTiles: boolean[];
+}>();
 
 const emit = defineEmits<{
   select: [
@@ -15,10 +19,29 @@ const emit = defineEmits<{
 const position = ref<number | null>(null);
 const tileType = ref<string>("");
 
-const tileTypes = ["oasis", "trap"];
+const tileTypes = [
+  {
+    label: "oasis",
+    value: "1",
+  },
+  {
+    label: "mirage",
+    value: "2",
+  },
+];
+
+const availablePositions = computed(() =>
+  props.availableTiles
+    .map((available, index) => (available ? index : null))
+    .filter((index): index is number => index !== null),
+);
 
 function confirm() {
   if (position.value === null || !tileType.value) {
+    return;
+  }
+
+  if (!props.availableTiles[position.value]) {
     return;
   }
 
@@ -35,41 +58,24 @@ function confirm() {
       <h2>{{ $t("tileSelector.title") }}</h2>
 
       <div class="content">
-        <input
-          v-model.number="position"
-          type="number"
-          :placeholder="$t('tileSelector.position')"
-        />
+        <input v-model.number="position" type="number" :placeholder="$t('tileSelector.position')" />
 
         <select v-model="tileType">
-          <option
-            disabled
-            value=""
-          >
+          <option disabled value="">
             {{ $t("tileSelector.type") }}
           </option>
 
-          <option
-            v-for="type in tileTypes"
-            :key="type"
-            :value="type"
-          >
-            {{ type }}
+          <option v-for="type in tileTypes" :key="type.value" :value="type.value">
+            {{ type.label }}
           </option>
         </select>
 
         <div class="actions">
-          <button
-            class="confirm-btn"
-            @click="confirm"
-          >
+          <button class="confirm-btn" @click="confirm">
             {{ $t("tileSelector.confirm") }}
           </button>
 
-          <button
-            class="cancel-btn"
-            @click="$emit('close')"
-          >
+          <button class="cancel-btn" @click="$emit('close')">
             {{ $t("tileSelector.cancel") }}
           </button>
         </div>

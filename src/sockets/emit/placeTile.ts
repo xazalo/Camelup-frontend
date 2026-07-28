@@ -4,7 +4,7 @@ export function placeTile(data: {
     gameId: string;
     playerName: string;
     position: number;
-    tileType: string;
+    tileType: number;
 }) {
     socket.emit("placeTile", data);
 }
