@@ -186,5 +186,18 @@
     "position": "Posición",
     "noCards": "Este jugador no ha realizado ninguna apuesta.",
     "close": "Cerrar"
+  },
+  "betCards": {
+    "title": "Cartas de apuesta disponibles",
+    "noCards": "No quedan cartas",
+    "close": "Cerrar"
+  },
+  "colors": {
+    "red": "ROJO",
+    "blue": "AZUL",
+    "yellow": "AMARILLO",
+    "green": "VERDE",
+    "white": "WHITE",
+    "negro": "BLACK"
   }
 }

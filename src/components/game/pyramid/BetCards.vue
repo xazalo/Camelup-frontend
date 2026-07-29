@@ -13,12 +13,14 @@ const colorMap: Record<string, string> = {
   blue: "#4d8cf5",
   red: "#df4d4d",
 };
+
+
 </script>
 
 <template>
   <div class="overlay" @click.self="emit('close')">
     <div class="dialog">
-      <h2>Choose a betting card</h2>
+      <h2>{{ $t("betCards.title") }}</h2>
 
       <div class="cards">
         <div
@@ -28,7 +30,10 @@ const colorMap: Record<string, string> = {
           :class="{ disabled: !card }"
         >
           <div class="card-header" :style="{ backgroundColor: colorMap[color] }">
-            {{ color.toUpperCase() }}
+            {{ color === "red" ? $t("colors.red") : "" }}
+            {{ color === "yellow" ? $t("colors.yellow") : "" }}
+            {{ color === "blue" ? $t("colors.blue") : "" }}
+            {{ color === "green" ? $t("colors.green") : "" }}
           </div>
 
           <div class="camel">
@@ -71,12 +76,12 @@ const colorMap: Record<string, string> = {
             </div>
           </template>
 
-          <div v-else class="empty">No cards</div>
+          <div v-else class="empty">{{ $t("betCards.noCards") }}</div>
         </div>
       </div>
 
       <div class="actions">
-        <button class="cancel-btn" @click="emit('close')">Close</button>
+        <button class="cancel-btn" @click="emit('close')">{{ $t("betCards.close") }}</button>
       </div>
     </div>
   </div>
