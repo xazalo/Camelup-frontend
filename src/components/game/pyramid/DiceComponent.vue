@@ -1,15 +1,26 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import type { Colors } from "@/types/game/Colors";
 
-defineProps<{
+const props = defineProps<{
   color: Colors;
   value: 1 | 2 | 3;
 }>();
+
+const dotColor = computed(() => {
+  const isLightColor = props.color === "white" || "yellow"
+  return props.color === isLightColor ? "#4A3522" : "#FFFFFF";
+});
 </script>
 
 <template>
   <div class="dice" :style="{ background: color }">
-    <span v-for="dot in value" :key="dot" class="dot"></span>
+    <span
+      v-for="dot in value"
+      :key="dot"
+      class="dot"
+      :style="{ background: dotColor }"
+    />
   </div>
 </template>
 
@@ -35,7 +46,6 @@ defineProps<{
   width: 8px;
   height: 8px;
 
-  background: white;
   border-radius: 50%;
 
   justify-self: center;

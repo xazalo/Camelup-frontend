@@ -89,7 +89,7 @@ function close() {
 
   padding: var(--space-xl);
 
-  background: rgb(0 0 0 / 0.45);
+  background: rgba(74, 53, 34, 0.45);
   backdrop-filter: blur(2px);
 }
 
@@ -102,12 +102,12 @@ function close() {
 
   overflow: hidden;
 
-  background: var(--color-surface);
+  background: var(--color-surface-alt);
 
-  border: var(--border-width) solid var(--color-border);
+  border: 4px solid var(--color-primary);
   border-radius: var(--radius-xl);
 
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 18px 40px var(--color-shadow-md);
 }
 
 .header {
@@ -119,19 +119,19 @@ function close() {
 
   background: var(--color-primary);
   color: var(--color-primary-text);
-
-  border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .header h2 {
   margin: 0;
+
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
+  letter-spacing: 1px;
 }
 
 .close-btn {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
 
   display: flex;
   justify-content: center;
@@ -150,7 +150,7 @@ function close() {
 }
 
 .close-btn:hover {
-  background: rgb(255 255 255 / 0.15);
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .cards {
@@ -170,16 +170,21 @@ function close() {
 
   padding: var(--space-lg);
 
-  background: var(--color-background);
+  background: linear-gradient(
+    var(--color-surface),
+    var(--color-background)
+  );
 
-  border: var(--border-width) solid var(--color-border);
+  border: 2px solid var(--color-accent);
   border-radius: var(--radius-lg);
 
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 6px 14px var(--color-shadow-md);
 }
 
 .bet-card p {
   margin: 0;
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
 }
 
 .bet-card ul {
@@ -189,14 +194,15 @@ function close() {
 
 .bet-card li {
   margin-bottom: var(--space-xs);
+  color: var(--color-text-muted);
 }
 
 .empty {
   padding: var(--space-2xl);
 
   text-align: center;
-  color: var(--color-text-muted);
 
+  color: var(--color-text-muted);
   font-style: italic;
 }
 

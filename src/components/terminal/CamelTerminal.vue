@@ -34,7 +34,7 @@ watch(
 </script>
 
 <template>
-  <button v-if="!isOpen" class="terminal-button" @click="toggleTerminal"><Icon icon="lucide:square-chevron-right" /></button>
+  <button v-if="!isOpen" class="terminal-button" @click="toggleTerminal"><Icon class="button-icon" icon="lucide:square-chevron-right" /></button>
 
   <div v-if="isOpen" class="terminal">
     <header class="terminal-header">
@@ -77,11 +77,11 @@ watch(
 <style>
 .terminal-button {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 10px;
+  left: 10px;
 
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
 
   display: flex;
   justify-content: center;
@@ -100,6 +100,11 @@ watch(
   box-shadow: var(--shadow-md);
 
   transition: var(--transition-fast);
+}
+
+.button-icon {
+  width: 16px;
+  height: 16px;
 }
 
 .terminal {

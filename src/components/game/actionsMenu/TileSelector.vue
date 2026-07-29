@@ -97,15 +97,19 @@ function confirm() {
   padding: var(--space-xl);
 
   background: rgba(74, 53, 34, 0.45);
+  backdrop-filter: blur(2px);
 }
 
 .dialog {
-  width: min(380px, 100%);
-  background: var(--color-surface);
-  border: var(--border-width) solid var(--color-border);
+  width: min(420px, 100%);
+
+  background: var(--color-surface-alt);
+  border: 4px solid var(--color-accent);
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
+
   overflow: hidden;
+
+  box-shadow: 0 18px 40px var(--color-shadow-md);
 }
 
 .dialog h2 {
@@ -118,12 +122,14 @@ function confirm() {
   text-align: center;
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
+  letter-spacing: 1px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+
   padding: var(--space-2xl);
 }
 
@@ -134,13 +140,26 @@ select {
 
   padding: 0 var(--space-md);
 
-  border: var(--border-width) solid var(--color-border);
+  border: 2px solid var(--color-border);
   border-radius: var(--radius-md);
 
-  background: var(--color-background);
+  background: linear-gradient(
+    var(--color-surface),
+    var(--color-background)
+  );
+
   color: var(--color-text);
 
   font-size: var(--font-size-md);
+
+  transition: var(--transition-fast);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(201, 123, 42, 0.2);
 }
 
 .actions {
@@ -152,7 +171,7 @@ select {
   flex: 1;
   height: var(--control-height-md);
 
-  border: 1px solid var(--color-border);
+  border: none;
   border-radius: var(--radius-md);
 
   font-size: var(--font-size-sm);
@@ -168,16 +187,19 @@ select {
 }
 
 .confirm-btn:hover {
-  filter: brightness(1.05);
+  background: var(--color-primary-hover);
 }
 
 .cancel-btn {
-  background: var(--color-surface-alt);
+  background: var(--color-surface);
   color: var(--color-text-muted);
+  border: 2px solid var(--color-border);
 }
 
 .cancel-btn:hover {
-  background: var(--color-border);
+  background: var(--color-background);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 @media (max-width: 640px) {
