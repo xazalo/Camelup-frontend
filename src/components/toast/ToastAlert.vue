@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import type { Toast } from "@/stores/toast";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const props = defineProps<{
   toast: Toast;
@@ -19,7 +22,7 @@ onMounted(() => {
 
 <template>
   <article class="toast" :class="`toast-${toast.type}`">
-    {{ toast.message }}
+    {{ $t(toast.message) }}
   </article>
 </template>
 

@@ -179,7 +179,7 @@
     "confirm": "Confirmar",
     "cancel": "Cancelar"
   },
-   "playerBets": {
+  "playerBets": {
     "title": "Apuestas de {player}",
     "camel": "Camello",
     "payouts": "Recompensas",
@@ -199,5 +199,89 @@
     "green": "VERDE",
     "white": "WHITE",
     "negro": "BLACK"
+  },
+  "logs": {
+    "gameCreated": "Partida creada.",
+    "gameReturned": "Estado de la partida recuperado correctamente.",
+    "unknown": "Ha ocurrido un error desconocido.",
+
+    "gameNotStarted": "La partida aún no ha comenzado.",
+    "tilePlaced": "Se ha colocado una loseta.",
+    "diceRolled": "El dado se ha lanzado.",
+    "camelNotFound": "No se ha encontrado el camello.",
+    "winnerBet": "Se ha realizado una apuesta al ganador.",
+    "loserBet": "Se ha realizado una apuesta al perdedor.",
+    "playerNotFound": "No se ha encontrado al jugador.",
+    "roundBet": "Se ha realizado una apuesta de ronda.",
+
+    "aiNoResponse": "La IA no ha respondido.",
+    "aiDidNotPlay": "La IA no ha realizado ninguna acción.",
+    "unknownAiAction": "La IA ha realizado una acción desconocida.",
+
+    "invalidPlayerFormat": "El formato del jugador no es válido.",
+    "invalidTilePosition": "La posición de la loseta no es válida.",
+    "invalidBetColor": "El color de la apuesta no es válido.",
+    "invalidBoardState": "El estado del tablero no es válido.",
+
+    "invalidPlayerCount": "La partida requiere entre 2 y 6 jugadores.",
+    "notPlayersTurn": "No es el turno de ese jugador.",
+    "tileFirstPosition": "No se puede colocar una loseta en la primera casilla.",
+    "notYourTurn": "No es tu turno.",
+    "tileAlreadyPlaced": "La loseta ya ha sido colocada.",
+    "noCardsRemaining": "No quedan cartas para ese camello.",
+
+    "serverBug": "Se ha producido un error interno en el servidor.",
+    "gameAlreadyFinished": "La partida ya ha finalizado.",
+    "invalidLog": "Se ha producido un error al generar el registro.",
+
+    "unauthorizedPlayer": "Jugador no autorizado.",
+    "maximumPlayers": "Se ha alcanzado el número máximo de jugadores.",
+
+    "aiPlayerAdded": "Se ha añadido una IA.",
+    "lobbyNotFound": "No se ha encontrado el lobby.",
+    "couldNotAddAiPlayer": "No se ha podido añadir la IA.",
+
+    "lobbyCreated": "Lobby creado correctamente.",
+    "couldNotCreateLobby": "No se ha podido crear el lobby.",
+
+    "gameStateReceived": "Estado de la partida recibido.",
+    "couldNotGetGameState": "No se ha podido obtener el estado de la partida.",
+
+    "playerJoinedGame": "Un jugador se ha unido a la partida.",
+    "couldNotJoinGame": "No se ha podido unir a la partida.",
+
+    "playerAlreadyExistsByName": "Ya existe un jugador con ese nombre.",
+    "playerJoinedLobby": "Un jugador se ha unido al lobby.",
+    "couldNotJoinLobby": "No se ha podido unir al lobby.",
+
+    "gameNotFound": "No se ha encontrado la partida.",
+    "unauthorized": "Acceso no autorizado.",
+
+    "couldNotPlaceLoserBet": "No se ha podido realizar la apuesta al perdedor.",
+    "couldNotPlaceTile": "No se ha podido colocar la loseta.",
+    "couldNotPlaceWinnerBet": "No se ha podido realizar la apuesta al ganador.",
+    "couldNotRollDice": "No se ha podido lanzar el dado.",
+
+    "gameIsNull": "La partida no está disponible.",
+
+    "gameStarted": "La partida ha comenzado.",
+    "couldNotStartGame": "No se ha podido iniciar la partida.",
+
+    "couldNotTakeRoundBet": "No se ha podido realizar la apuesta de ronda.",
+
+    "aiRequestFailed": "La solicitud a la IA ha fallado.",
+
+    "maximumPlayersReached": "Se ha alcanzado el número máximo de jugadores.",
+    "playerAlreadyExists": "El jugador ya existe.",
+    "playerAdded": "Jugador añadido correctamente.",
+
+    "noPlayers": "No hay jugadores.",
+    "couldNotGetLobby": "No se ha podido obtener el lobby.",
+    "noLobby": "No existe ningún lobby.",
+
+    "yourTurn": "Es tu turno",
+    "copied": "Copiado",
+
+    "fetchFailed": "La AI esta apagada"
   }
 }

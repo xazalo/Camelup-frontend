@@ -6,9 +6,11 @@ import { useLobbyStore } from "@/stores/lobby";
 import { useLobby } from "@/composables/useLobby";
 import { useGame } from "@/composables/useGame";
 import { useRouter } from "vue-router";
+import { useToast } from "@/composables/useToast";
 
 const lobbyStore = useLobbyStore();
 const router = useRouter();
+const { show } = useToast();
 
 const { lobby } = storeToRefs(lobbyStore);
 
@@ -18,7 +20,7 @@ const { start } = useGame();
 const copyLobbyCode = async () => {
   if (!lobby.value) return;
   await navigator.clipboard.writeText(`http://localhost:4173/?code=${lobby.value.id}`);
-  alert("The code has been copied");
+  show({ type: "INFO", message: "logs.copied" });
 };
 
 const handleAddAI = () => {
@@ -29,7 +31,7 @@ const handleAddAI = () => {
 const handleStartGame = () => {
   if (!lobby.value) return;
   start();
-  //TODO: Add loading screen
+  //todo: add sound
 };
 </script>
 

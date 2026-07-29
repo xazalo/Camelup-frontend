@@ -8,7 +8,7 @@ import { onLobbyUpdated } from "@/sockets/update/lobbyUpdated";
 import { useLobbyStore } from "@/stores/lobby";
 
 import { onLog } from "@/sockets/log/onLog";
-import { parseGameLogs } from "@/utils/logsParser";
+import { parseGameLogs, type ParsedLog } from "@/utils/logsParser";
 import { useLogs } from "@/composables/useLogs";
 import { useToast } from "@/composables/useToast";
 
@@ -17,6 +17,7 @@ import { onGameLaunched } from "@/sockets/update/launchGame";
 
 import router from "@/router";
 import { onPlayerId } from "@/sockets/update/playerId";
+import { onPlayerTurn } from "@/sockets/update/playerTurn";
 
 export function initGame() {
   const gameStore = useGameStore();
@@ -73,10 +74,19 @@ export function initLogs() {
   const { show } = useToast();
 
   onLog((data) => {
-    const logs = parseGameLogs(data);
+    const logs = parseGameLogs(data) as ParsedLog[];
 
     addLogs(logs);
 
-    logs.forEach(show);
+    logs.forEach((log) => {
+      show(log);
+    });
+  });
+
+  onPlayerTurn((player) => {
+    const isPlayer = storage.getName();
+    if (isPlayer === undefined) return;
+    if (isPlayer === player) show({type: "INFO", message: "logs.yourTurn"});
+    //todo: add music effects
   });
 }

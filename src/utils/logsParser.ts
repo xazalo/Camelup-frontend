@@ -6,7 +6,7 @@ export type ParsedLog = {
 };
 
 export function parseGameLogs(data: string): ParsedLog[] {
-  const regex = /\[(LOG|ERROR|FINISHED|STARTED)\]/g;
+  const regex = /\[(LOG|ERROR|FINISHED|STARTED|SUCCESS|INFO|WARNING)\]/g;
 
   const matches = [...data.matchAll(regex)];
 
