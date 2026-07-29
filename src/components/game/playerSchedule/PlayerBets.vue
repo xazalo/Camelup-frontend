@@ -24,10 +24,13 @@ function close() {
       @click.stop
     >
       <div class="header">
-        <h2>{{ player.name }}</h2>
+        <h2>
+          {{ $t("playerBets.title", { player: player.name }) }}
+        </h2>
 
         <button
           class="close-btn"
+          :aria-label="$t('playerBets.close')"
           @click="close"
         >
           ✕
@@ -44,12 +47,12 @@ function close() {
           class="bet-card"
         >
           <p>
-            <strong>Camel:</strong>
+            <strong>{{ $t("playerBets.camel") }}:</strong>
             {{ card.camel.color }}
           </p>
 
           <p>
-            <strong>Payouts</strong>
+            <strong>{{ $t("playerBets.payouts") }}</strong>
           </p>
 
           <ul>
@@ -57,7 +60,7 @@ function close() {
               v-for="(value, position) in card.payouts"
               :key="position"
             >
-              {{ position }}:
+              {{ $t("playerBets.position") }} {{ position }}:
               {{ value }}
             </li>
           </ul>
@@ -68,7 +71,7 @@ function close() {
         v-else
         class="empty"
       >
-        No bet cards.
+        {{ $t("playerBets.noCards") }}
       </p>
     </div>
   </div>

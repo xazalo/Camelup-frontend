@@ -178,5 +178,13 @@
     "type": "Selecciona un tipo",
     "confirm": "Confirmar",
     "cancel": "Cancelar"
+  },
+   "playerBets": {
+    "title": "Apuestas de {player}",
+    "camel": "Camello",
+    "payouts": "Recompensas",
+    "position": "Posición",
+    "noCards": "Este jugador no ha realizado ninguna apuesta.",
+    "close": "Cerrar"
   }
 }
