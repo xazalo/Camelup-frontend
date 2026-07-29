@@ -17,7 +17,7 @@ const { start } = useGame();
 
 const copyLobbyCode = async () => {
   if (!lobby.value) return;
-  await navigator.clipboard.writeText(lobby.value.id);
+  await navigator.clipboard.writeText(`http://localhost:4173/?code=${lobby.value.id}`);
   alert("The code has been copied");
 };
 

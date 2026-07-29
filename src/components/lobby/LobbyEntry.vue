@@ -6,6 +6,10 @@ import { storeToRefs } from "pinia";
 import { useLobby } from "@/composables/useLobby";
 import { useLobbyStore } from "@/stores/lobby";
 
+const props = defineProps<{
+  lobbyCode?: string;
+}>();
+
 const router = useRouter();
 
 const { create, join } = useLobby();
@@ -13,10 +17,23 @@ const { create, join } = useLobby();
 const lobbyStore = useLobbyStore();
 const { lobby } = storeToRefs(lobbyStore);
 
-const mode = ref<"create" | "join">("create");
+const mode = ref<"create" | "join">(
+  props.lobbyCode ? "join" : "create",
+);
 
 const username = ref("");
-const lobbyIp = ref("");
+const lobbyIp = ref(props.lobbyCode ?? "");
+
+watch(
+  () => props.lobbyCode,
+  (code) => {
+    if (code) {
+      lobbyIp.value = code;
+      mode.value = "join";
+    }
+  },
+  { immediate: true },
+);
 
 watch(
   lobby,
