@@ -10,7 +10,7 @@
   --color-secondary: #1F8A70;
   --color-secondary-hover: #18715C;
 
-  --color-accent: #d4a017;
+  --color-accent: #D4A017;
 
   --color-text: #4A3522;
   --color-text-muted: #7B6754;
@@ -24,4 +24,14 @@
   --color-warning: #E6A23C;
   --color-danger: #C85A54;
   --color-info: #5B8DEF;
+
+  --color-parchment: #EFE1B8;
+  --color-parchment-light: #FFFEF6;
+  --color-parchment-dark: #F8EDD2;
+
+  --color-wood: #8A6435;
+  --color-wood-dark: #6D4F2B;
+
+  --color-gold: #C7A14A;
+  --color-gold-light: #E2C067;
 }

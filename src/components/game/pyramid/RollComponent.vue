@@ -4,6 +4,7 @@ import PyramidComponent from "@/components/game/pyramid/PyramidComponent.vue";
 import { useGame } from "@/composables/useGame.ts";
 
 const { rolledDices } = useGame();
+
 </script>
 
 <template>

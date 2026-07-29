@@ -1,12 +1,24 @@
 <script setup lang="ts">
+import { ref } from "vue";
+import BetCards from "@/components/game/pyramid/BetCards.vue";
+
+const showBetCards = ref(false);
 </script>
 
 <template>
-  <div class="pyramid">
+  <div
+    class="pyramid"
+    @click="showBetCards = true"
+  >
     <div class="sand"></div>
     <div class="entrance"></div>
     <div class="blocks"></div>
   </div>
+
+  <BetCards
+    v-if="showBetCards"
+    @close="showBetCards = false"
+  />
 </template>
 
 <style scoped>
@@ -14,6 +26,7 @@
   width: 90px;
   height: 70px;
   transform: translateX(-0%);
+  cursor: pointer;
 }
 
 .sand {
@@ -29,7 +42,7 @@
   border-right: 45px solid transparent;
   border-bottom: 65px solid #d8b15a;
 
-  filter: drop-shadow(0 2px 2px rgba(0,0,0,.3));
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
 }
 
 .blocks {
@@ -44,19 +57,19 @@
     linear-gradient(
       to bottom,
       transparent 45%,
-      rgba(120,80,20,.25) 45%,
-      rgba(120,80,20,.25) 55%,
+      rgba(120, 80, 20, 0.25) 45%,
+      rgba(120, 80, 20, 0.25) 55%,
       transparent 55%
     ),
     linear-gradient(
       to right,
       transparent 30%,
-      rgba(120,80,20,.2) 30%,
-      rgba(120,80,20,.2) 35%,
+      rgba(120, 80, 20, 0.2) 30%,
+      rgba(120, 80, 20, 0.2) 35%,
       transparent 35%,
       transparent 65%,
-      rgba(120,80,20,.2) 65%,
-      rgba(120,80,20,.2) 70%,
+      rgba(120, 80, 20, 0.2) 65%,
+      rgba(120, 80, 20, 0.2) 70%,
       transparent 70%
     );
 }
@@ -72,5 +85,29 @@
 
   background: #5b3a1b;
   border-radius: 8px 8px 0 0;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 320px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.modal button {
+  margin-top: 16px;
 }
 </style>
