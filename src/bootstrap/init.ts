@@ -10,6 +10,7 @@ import { useLobbyStore } from "@/stores/lobby";
 import { onLog } from "@/sockets/log/onLog";
 import { parseGameLogs } from "@/utils/logsParser";
 import { useLogs } from "@/composables/useLogs";
+import { useToast } from "@/composables/useToast";
 
 import { storage } from "@/utils/storage";
 import { onGameLaunched } from "@/sockets/update/launchGame";
@@ -69,10 +70,13 @@ export function initLobby() {
 
 export function initLogs() {
   const { addLogs } = useLogs();
+  const { show } = useToast();
 
   onLog((data) => {
     const logs = parseGameLogs(data);
 
     addLogs(logs);
+
+    logs.forEach(show);
   });
 }

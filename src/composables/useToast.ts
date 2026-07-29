@@ -1,33 +1,33 @@
 import { useToastStore } from "@/stores/toast";
+import type { ParsedLog } from "@/utils/logsParser";
 
 export const useToast = () => {
   const toastStore = useToastStore();
 
-  const success = (message: string, duration?: number) => {
-    toastStore.add(message, "success", duration);
-  };
+  const show = (log: ParsedLog, duration?: number) => {
+    switch (log.type) {
+      case "SUCCESS":
+        toastStore.add(log.message, "success", duration);
+        break;
 
-  const error = (message: string, duration?: number) => {
-    toastStore.add(message, "error", duration);
-  };
+      case "ERROR":
+        toastStore.add(log.message, "error", duration);
+        break;
 
-  const info = (message: string, duration?: number) => {
-    toastStore.add(message, "info", duration);
-  };
+      case "WARNING":
+        toastStore.add(log.message, "warning", duration);
+        break;
 
-  const warning = (message: string, duration?: number) => {
-    toastStore.add(message, "warning", duration);
-  };
+      case "INFO":
+        toastStore.add(log.message, "info", duration);
+        break;
 
-  const remove = (id: number) => {
-    toastStore.remove(id);
+      default:
+        break;
+    }
   };
 
   return {
-    success,
-    error,
-    info,
-    warning,
-    remove,
+    show,
   };
 };

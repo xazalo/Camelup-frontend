@@ -1,4 +1,4 @@
-type LogType = "LOG" | "ERROR" | "FINISHED" | "STARTED";
+type LogType = "LOG" | "ERROR" | "STARTED" | "FINISHED" | "SUCCESS" | "INFO" | "WARNING";
 
 export type ParsedLog = {
   type: LogType;

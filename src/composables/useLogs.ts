@@ -2,6 +2,7 @@
 
 import { storeToRefs } from "pinia";
 import { useLogsStore } from "@/stores/logs";
+import type { ParsedLog } from "@/utils/logsParser";
 
 export function useLogs() {
   const store = useLogsStore();
@@ -9,10 +10,7 @@ export function useLogs() {
   const { logs } = storeToRefs(store);
 
   function addLogs(
-    logs: {
-      type: "LOG" | "ERROR" | "STARTED" | "FINISHED";
-      message: string;
-    }[],
+    logs: ParsedLog[],
   ) {
     store.addLogs(logs);
   }

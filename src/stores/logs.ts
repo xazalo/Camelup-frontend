@@ -1,11 +1,8 @@
+import type { ParsedLog } from "@/utils/logsParser";
 import { defineStore } from "pinia";
 
-export type LogType = "LOG" | "ERROR" | "STARTED" | "FINISHED";
-
-export interface AppLog {
+export interface AppLog extends ParsedLog {
   id: number;
-  type: LogType;
-  message: string;
   timestamp: Date;
 }
 
@@ -15,7 +12,7 @@ export const useLogsStore = defineStore("logs", {
   }),
 
   actions: {
-    addLogs(newLogs: Omit<AppLog, "id" | "timestamp">[]) {
+    addLogs(newLogs: ParsedLog[]) {
       this.logs.push(
         ...newLogs.map((log) => ({
           ...log,
