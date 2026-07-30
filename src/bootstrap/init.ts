@@ -1,46 +1,89 @@
 import { onGameStarted } from "@/sockets/update/gameStarted";
 import { onGameStateUpdated } from "@/sockets/update/gameState";
-import { useGameStore } from "@/stores/game";
+import { onGameLaunched } from "@/sockets/update/launchGame";
+import { onPlayerId } from "@/sockets/update/playerId";
+import { onPlayerTurn } from "@/sockets/update/playerTurn";
+import { onWinnerPlayer } from "@/sockets/update/winnerPlayer";
 
 import { onLobbyCreated } from "@/sockets/update/lobbyCreated";
 import { onLobbyJoined } from "@/sockets/update/lobbyJoined";
 import { onLobbyUpdated } from "@/sockets/update/lobbyUpdated";
-import { useLobbyStore } from "@/stores/lobby";
 
 import { onLog } from "@/sockets/log/onLog";
-import { parseGameLogs, type ParsedLog } from "@/utils/logsParser";
+
+import { useGameStore } from "@/stores/game";
+import { useLobbyStore } from "@/stores/lobby";
+
 import { useLogs } from "@/composables/useLogs";
 import { useToast } from "@/composables/useToast";
+import { useFx } from "@/composables/useFx";
+import { useSongs } from "@/composables/useSongs";
 
+import { parseGameLogs, type ParsedLog } from "@/utils/logsParser";
 import { storage } from "@/utils/storage";
-import { onGameLaunched } from "@/sockets/update/launchGame";
 
 import router from "@/router";
-import { onPlayerId } from "@/sockets/update/playerId";
-import { onPlayerTurn } from "@/sockets/update/playerTurn";
 
-export function initGame() {
+export function initSockets() {
   const gameStore = useGameStore();
+  const lobbyStore = useLobbyStore();
+
+  const { addLogs } = useLogs();
+  const { show } = useToast();
+
+  const fx = useFx();
+  const { toggleMusic } = useSongs();
+
+  // ===========================
+  // GAME EVENTS
+  // ===========================
 
   onGameStarted((game) => {
     gameStore.setGame(game);
   });
 
-  onPlayerId((data) => {
-    storage.savePlayerId(data.playerId);
+  onGameStateUpdated((game) => {
+    gameStore.setGame(game);
   });
 
   onGameLaunched(() => {
     router.push({ name: "game" });
   });
 
-  onGameStateUpdated((game) => {
-    gameStore.setGame(game);
-  });
-}
+  // ===========================
+  // PLAYER EVENTS
+  // ===========================
 
-export function initLobby() {
-  const lobbyStore = useLobbyStore();
+  onPlayerId((data) => {
+    storage.savePlayerId(data.playerId);
+  });
+
+  onPlayerTurn((player) => {
+    const name = storage.getName();
+
+    if (!name) return;
+
+    if (name === player) {
+      show({
+        type: "INFO",
+        message: "logs.yourTurn",
+      });
+
+      fx.play("your-turn");
+    }
+  });
+
+  onWinnerPlayer((winner) => {
+    const name = storage.getName();
+
+    if (!name) return;
+    toggleMusic();
+    fx.play(name === winner ? "winner" : "loser");
+  });
+
+  // ===========================
+  // LOBBY EVENTS
+  // ===========================
 
   onLobbyCreated(({ id: lobbyId, players }) => {
     lobbyStore.setLobby({
@@ -48,12 +91,10 @@ export function initLobby() {
       players,
     });
 
-    if (!players[0]) {
-      return;
-    }
+    if (!players[0]) return;
 
     storage.saveId(lobbyId);
-    storage.saveName(players[0]?.name);
+    storage.saveName(players[0].name);
   });
 
   onLobbyJoined((data) => {
@@ -67,11 +108,10 @@ export function initLobby() {
       players: data.players,
     });
   });
-}
 
-export function initLogs() {
-  const { addLogs } = useLogs();
-  const { show } = useToast();
+  // ===========================
+  // LOG EVENTS
+  // ===========================
 
   onLog((data) => {
     const logs = parseGameLogs(data) as ParsedLog[];
@@ -81,12 +121,5 @@ export function initLogs() {
     logs.forEach((log) => {
       show(log);
     });
-  });
-
-  onPlayerTurn((player) => {
-    const isPlayer = storage.getName();
-    if (isPlayer === undefined) return;
-    if (isPlayer === player) show({type: "INFO", message: "logs.yourTurn"});
-    //todo: add music effects
   });
 }

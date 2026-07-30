@@ -4,9 +4,11 @@ import { placeWinnerBet } from "@/sockets/emit/placeWinnerBet";
 import { placeTile } from "@/sockets/emit/placeTile";
 import { placeLoserBet } from "@/sockets/emit/placeLoserBet";
 import { storage } from "@/utils/storage";
-import type { AvailableActions } from "@/types/game/players/AvailableActions";
+import { useFx } from "./useFx";
 
 export function useActions() {
+  const fx = useFx();
+
   function getPlayerData() {
     const gameId = storage.getId();
     const playerName = storage.getName();
@@ -32,6 +34,8 @@ export function useActions() {
     const player = getPlayerData();
     if (!player) return;
 
+    fx.play("roll-dice");
+
     rollTheDice(player);
   }
 
@@ -39,6 +43,8 @@ export function useActions() {
     const player = getPlayerData();
 
     if (!player) return;
+
+    fx.play("bet");
 
     takeRoundBet({
       ...player,
@@ -51,6 +57,8 @@ export function useActions() {
 
     if (!player) return;
 
+    fx.play("bet");
+
     placeWinnerBet({
       ...player,
       camelColor,
@@ -62,6 +70,8 @@ export function useActions() {
 
     if (!player) return;
 
+    fx.play("bet");
+
     placeLoserBet({
       ...player,
       camelColor,
@@ -72,6 +82,8 @@ export function useActions() {
     const player = getPlayerData();
 
     if (!player) return;
+
+    fx.play("place-tile");
 
     placeTile({
       ...player,

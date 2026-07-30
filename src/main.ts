@@ -37,7 +37,7 @@ import "@/assets/css/colors.css";
 import "@/assets/css/design-tokens.css";
 import "@/assets/css/globals.css";
 
-import { initGame, initLobby, initLogs } from "./bootstrap/init.ts";
+import { initSockets } from "./bootstrap/init.ts";
 
 const app = createApp(App);
 
@@ -45,8 +45,6 @@ app.use(createPinia());
 app.use(router);
 app.use(i18n);
 
-initGame();
-initLobby();
-initLogs();
+initSockets();
 
 app.mount("#app");

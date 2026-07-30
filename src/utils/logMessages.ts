@@ -25,6 +25,7 @@ export const LOG_MESSAGE_KEYS: Record<string, string> = {
 
   "Players must be": "logs.invalidPlayerCount",
   "It is not this player's turn": "logs.notPlayersTurn",
+  "It is not your turn": "logs.notPlyersTurn",
   "Tile cannot be placed on the first position": "logs.tileFirstPosition",
   "Is not your turn": "logs.notYourTurn",
   "Tile already placed": "logs.tileAlreadyPlaced",

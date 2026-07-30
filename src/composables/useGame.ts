@@ -5,6 +5,8 @@ import { useLobbyStore } from "@/stores/lobby";
 import generatePayoutTable from "@/utils/generatePayoutTable";
 import { Colors } from "@/types/game/Colors";
 
+import { useSongs } from "./useSongs";
+
 import { storage } from "@/utils/storage";
 
 const betColors = [
@@ -17,12 +19,14 @@ const betColors = [
 export function useGame() {
   const gameStore = useGameStore();
   const lobbyStore = useLobbyStore();
+  const { toggleMusic } = useSongs();
 
   function start() {
     if (!lobbyStore.lobby?.id) {
       return;
     }
     startGame(lobbyStore.lobby.id);
+    toggleMusic();
   }
 
   const board = computed(() => gameStore.game?.board);
