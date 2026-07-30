@@ -18,9 +18,6 @@ const fxVolumes: Record<string, number> = {
 export function getSongVolume(path: string): number {
   const file = (path.split("/").pop() ?? "").replace(/-[A-Za-z0-9_-]{8,}(?=\.(mp3|ogg|wav)$)/, "");
 
-  alert(file);
-  alert(songVolumes[file]);
-
   return songVolumes[file] ?? 1;
 }
 
