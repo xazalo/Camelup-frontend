@@ -200,6 +200,12 @@
     "white": "WHITE",
     "negro": "BLACK"
   },
+
+  "rotate": {
+    "title": "Rota to disposivito",
+    "description": "Este juego a sido diseñado para jugarse en horizontal"
+  },
+
   "logs": {
     "gameCreated": "Partida creada.",
     "gameReturned": "Estado de la partida recuperado correctamente.",
