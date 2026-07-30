@@ -1,1 +1,292 @@
-{}
+{
+  "nav": {
+    "home": "Home",
+    "info": "Information"
+  },
+  "lobbyEntry": {
+    "create": "Create Game",
+    "join": "Join Game",
+    "name": "Name",
+    "namePlace": "Player Name",
+    "createLobby": "Create Lobby",
+    "code": "Lobby Code",
+    "enter": "Enter Lobby"
+  },
+  "lobby": {
+    "title": "Lobby",
+    "code": "Code:",
+    "copy": "Copy",
+    "players": "Players",
+    "player": "Player",
+    "ai": "AI",
+    "addAI": "Add AI",
+    "startGame": "Start Game",
+    "noLobby": "No active lobby"
+  },
+  "homeHero": {
+    "badge": "Fan Edition",
+    "title": "Camel Up",
+    "subtitle": "The chaotic camel racing game where every roll can change the winner. Stack camels, place smart bets, and outplay your friends.",
+    "features": {
+      "stack": "Stack Camels",
+      "multiplayer": "Real-Time Multiplayer",
+      "bets": "Place Strategic Bets"
+    }
+  },
+  "rules": {
+    "rules": {
+      "title": "Rules",
+      "description": "Camel Up is a racing and betting board game in which players try to predict which camels will perform best during the race. The winner is not necessarily the player with the luckiest dice rolls, but the one who makes the best betting decisions at the right time."
+    },
+    "objective": {
+      "title": "Objective",
+      "description": "Earn the most coins by correctly predicting the outcome of the race, placing smart bets each round, and strategically using your desert tiles."
+    },
+    "camels": {
+      "title": "The Camels",
+      "items": [
+        "Five camels compete in the race.",
+        "Each camel moves when its die is rolled.",
+        "Camels can stack on top of one another.",
+        "If a camel carrying others moves, all camels on top of it move together.",
+        "A camel that lands on another camel or stack is placed on top of that stack."
+      ]
+    },
+    "actions": {
+      "title": "Player Actions",
+      "subtitle": "On your turn, choose exactly one of the following actions:",
+      "items": [
+        "Roll a die.",
+        "Take a round betting card.",
+        "Place a desert tile.",
+        "Place a final winner bet.",
+        "Place a final loser bet."
+      ]
+    },
+    "rolling": {
+      "title": "Rolling the Die",
+      "items": [
+        "Choose one of the remaining dice from the pyramid and roll it.",
+        "The corresponding camel moves according to the result.",
+        "You immediately receive one coin for rolling the die.",
+        "Once every camel has moved once, the current round ends."
+      ]
+    },
+    "roundBets": {
+      "title": "Round Bets",
+      "description": "During each round, players may take betting cards for the camel they believe will be leading when the round ends.",
+      "items": [
+        "The first card taken for a camel is worth more coins.",
+        "Later cards for the same camel are worth fewer coins.",
+        "Incorrect bets lose one coin."
+      ]
+    },
+    "finalWinner": {
+      "title": "Final Winner Bets",
+      "description": "At any point during the game, players may predict which camel will win the entire race.",
+      "items": [
+        "Correct bets placed earlier earn greater rewards.",
+        "Incorrect bets lose one coin."
+      ]
+    },
+    "finalLoser": {
+      "title": "Final Loser Bets",
+      "description": "Players may also predict which camel will finish last.",
+      "items": [
+        "Correct bets placed earlier earn greater rewards.",
+        "Incorrect bets lose one coin."
+      ]
+    },
+    "desertTiles": {
+      "title": "Desert Tiles",
+      "description": "Each player owns a desert tile that can be placed on an empty space on the board.",
+      "oasis": "Oasis (+1): The camel moves one additional space and ends on top of any stack already there.",
+      "mirage": "Mirage (-1): The camel moves back one space and is placed underneath any camels already there.",
+      "earn": "Whenever another player's camel lands on your tile, you earn one coin."
+    },
+    "endRound": {
+      "title": "End of a Round",
+      "items": [
+        "All five dice have been rolled.",
+        "Round bets are scored.",
+        "Desert tiles are returned to their owners.",
+        "The dice are returned to the pyramid.",
+        "A new round begins."
+      ]
+    },
+    "endRace": {
+      "title": "End of the Race",
+      "description": "The race ends immediately when a camel crosses the finish line.",
+      "items": [
+        "Final winner bets are resolved.",
+        "Final loser bets are resolved.",
+        "The player with the most coins wins the game."
+      ]
+    },
+    "notes": {
+      "title": "Notes",
+      "description": "This page summarizes the rules to help players understand the mechanics of this fan-made implementation. For the complete official rules and the full gameplay experience, please support the original Camel Up board game."
+    }
+  },
+  "about": {
+    "about": {
+      "title": "About This Project",
+      "p1": "This project is a personal recreation of the Camel Up board game. It was developed purely for educational purposes to practice software architecture, real-time communication, and modern web development technologies.",
+      "p2": "This is not an official implementation of the game, is not affiliated with the original authors or publishers, and is not intended to replace the original board game in any way."
+    },
+    "technical": {
+      "title": "Technical Details",
+      "items": [
+        "Built with Vue 3 and TypeScript.",
+        "Uses a Node.js server.",
+        "Real-time communication is handled with Socket.IO.",
+        "No database is used. All game and lobby data exists only in the server's memory while it is running."
+      ]
+    },
+    "purpose": {
+      "title": "Purpose",
+      "description": "The goal of this project is to learn, experiment, and showcase programming skills as part of my portfolio and job search. It is not intended to generate revenue or compete with the original game."
+    },
+    "copyright": {
+      "title": "Copyright Notice",
+      "p1": "All rights to Camel Up, its name, artwork, mechanics, and intellectual property belong to their respective owners.",
+      "p2": "Please don't sue me. 🙏 This project exists solely as a fan-made educational exercise."
+    },
+    "translations": {
+      "title": "Translations",
+      "description": "The German translations included in this project were generated with AI assistance and may contain inaccuracies. If you notice any mistakes, there's not much I can do about it."
+    }
+  },
+  "actionsMenu": {
+    "roundBet": "👉🏻 Round Bet",
+    "rollDice": "🎲 Roll Die",
+    "placeTile": "🧱 Place Tile",
+    "winnerBet": "🏆 Bet on Winner",
+    "loserBet": "💀 Bet on Loser",
+    "terminal": "📜 Terminal",
+    "exit": "⚠️ Exit",
+    "selectColor": "Select Color",
+    "cancel": "Cancel"
+  },
+  "colorSelector": {
+    "title": "Select Color",
+    "cancel": "Cancel"
+  },
+  "tileSelector": {
+    "title": "Select Tile",
+    "position": "Position",
+    "type": "Select a Type",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  },
+  "playerBets": {
+    "title": "{player}'s Bets",
+    "camel": "Camel",
+    "payouts": "Payouts",
+    "position": "Position",
+    "noCards": "This player has not placed any bets.",
+    "close": "Close"
+  },
+  "betCards": {
+    "title": "Available Betting Cards",
+    "noCards": "No cards remaining",
+    "close": "Close"
+  },
+  "colors": {
+    "red": "RED",
+    "blue": "BLUE",
+    "yellow": "YELLOW",
+    "green": "GREEN",
+    "white": "WHITE",
+    "negro": "BLACK"
+  },
+  "rotate": {
+    "title": "Rotate Your Device",
+    "description": "This game is designed to be played in landscape mode."
+  },
+
+  "logs": {
+    "gameCreated": "Game created.",
+    "gameReturned": "Game state retrieved successfully.",
+    "unknown": "An unknown error has occurred.",
+
+    "gameNotStarted": "The game has not started yet.",
+    "tilePlaced": "A tile has been placed.",
+    "diceRolled": "The die has been rolled.",
+    "camelNotFound": "Camel not found.",
+    "winnerBet": "A winner bet has been placed.",
+    "loserBet": "A loser bet has been placed.",
+    "playerNotFound": "Player not found.",
+    "roundBet": "A round bet has been placed.",
+
+    "aiNoResponse": "The AI did not respond.",
+    "aiDidNotPlay": "The AI did not take any action.",
+    "unknownAiAction": "The AI performed an unknown action.",
+
+    "invalidPlayerFormat": "Invalid player format.",
+    "invalidTilePosition": "Invalid tile position.",
+    "invalidBetColor": "Invalid bet color.",
+    "invalidBoardState": "Invalid board state.",
+
+    "invalidPlayerCount": "The game requires between 2 and 6 players.",
+    "notPlayersTurn": "It is not that player's turn.",
+    "tileFirstPosition": "A tile cannot be placed on the first space.",
+    "notYourTurn": "It is not your turn.",
+    "tileAlreadyPlaced": "The tile has already been placed.",
+    "noCardsRemaining": "No cards remain for that camel.",
+
+    "serverBug": "An internal server error has occurred.",
+    "gameAlreadyFinished": "The game has already finished.",
+    "invalidLog": "An error occurred while generating the log.",
+
+    "unauthorizedPlayer": "Unauthorized player.",
+    "maximumPlayers": "The maximum number of players has been reached.",
+
+    "aiPlayerAdded": "An AI player has been added.",
+    "lobbyNotFound": "Lobby not found.",
+    "couldNotAddAiPlayer": "Could not add the AI player.",
+
+    "lobbyCreated": "Lobby created successfully.",
+    "couldNotCreateLobby": "Could not create the lobby.",
+
+    "gameStateReceived": "Game state received.",
+    "couldNotGetGameState": "Could not retrieve the game state.",
+
+    "playerJoinedGame": "A player joined the game.",
+    "couldNotJoinGame": "Could not join the game.",
+
+    "playerAlreadyExistsByName": "A player with that name already exists.",
+    "playerJoinedLobby": "A player joined the lobby.",
+    "couldNotJoinLobby": "Could not join the lobby.",
+
+    "gameNotFound": "Game not found.",
+    "unauthorized": "Unauthorized access.",
+
+    "couldNotPlaceLoserBet": "Could not place the loser bet.",
+    "couldNotPlaceTile": "Could not place the tile.",
+    "couldNotPlaceWinnerBet": "Could not place the winner bet.",
+    "couldNotRollDice": "Could not roll the die.",
+
+    "gameIsNull": "The game is not available.",
+
+    "gameStarted": "The game has started.",
+    "couldNotStartGame": "Could not start the game.",
+
+    "couldNotTakeRoundBet": "Could not place the round bet.",
+
+    "aiRequestFailed": "The AI request failed.",
+
+    "maximumPlayersReached": "The maximum number of players has been reached.",
+    "playerAlreadyExists": "The player already exists.",
+    "playerAdded": "Player added successfully.",
+
+    "noPlayers": "No players.",
+    "couldNotGetLobby": "Could not retrieve the lobby.",
+    "noLobby": "No lobby exists.",
+
+    "yourTurn": "It's your turn",
+    "copied": "Copied",
+
+    "fetchFailed": "The AI is offline."
+  }
+}

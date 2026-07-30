@@ -1,1 +1,292 @@
-{}
+{
+  "nav": {
+    "home": "Start",
+    "info": "Information"
+  },
+  "lobbyEntry": {
+    "create": "Spiel erstellen",
+    "join": "Spiel beitreten",
+    "name": "Name",
+    "namePlace": "Spielername",
+    "createLobby": "Lobby erstellen",
+    "code": "Lobby-Code",
+    "enter": "Lobby betreten"
+  },
+  "lobby": {
+    "title": "Lobby",
+    "code": "Code:",
+    "copy": "Kopiere",
+    "players": "Spieler",
+    "player": "Spieler",
+    "ai": "KI",
+    "addAI": "KI hinzufügen",
+    "startGame": "Spiel starten",
+    "noLobby": "Kei aktivi Lobby"
+  },
+  "homeHero": {
+    "badge": "Fan-Edition",
+    "title": "Camel Up",
+    "subtitle": "S'chaotische Kamelrennspiel, bi dem jede Würfelwurf dr Sieger cha verändere. Staple Kamel, setz schlaui Wette und überliste dini Fründe.",
+    "features": {
+      "stack": "Kamel staple",
+      "multiplayer": "Echtziit-Multiplayer",
+      "bets": "Strategisch wette"
+    }
+  },
+  "rules": {
+    "rules": {
+      "title": "Regle",
+      "description": "Camel Up isch es Renn- und Wett-Brettspiel, bi dem d'Spieler versueche vorausz'säge, weli Kamel am beschte abschniide. Gwünnt nöd unbedingt dä mit em meischte Glück bim Würfle, sondern dä mit de beschte Wette zum richtige Ziitpunkt."
+    },
+    "objective": {
+      "title": "Ziel",
+      "description": "Verdien die meischte Münze, indem du dr Rennusgang richtig voraussägsch, cleveri Runde-Wette platzierisch und dini Wüstenplättli strategisch iisetzisch."
+    },
+    "camels": {
+      "title": "D'Kamel",
+      "items": [
+        "Füf Kamel nehmed am Renne teil.",
+        "Jedes Kamel bewegt sich, wenn sis Würfeli gworfe wird.",
+        "Kamel chönd ufänand gstaplet werde.",
+        "Wenn es Kamel mit andere obedrauf zieht, beweged sich alli zäme.",
+        "Landet es Kamel uf eme andere Kamel oder Stapel, wird es obe druf platziert."
+      ]
+    },
+    "actions": {
+      "title": "Spieler-Aktione",
+      "subtitle": "I dim Zug wählsch genau eini vo de folgende Aktione:",
+      "items": [
+        "Es Würfeli werfe.",
+        "E Runden-Wettcharte näh.",
+        "Es Wüstenplättli platziere.",
+        "Uf de Endsieger wette.",
+        "Uf de Endverlierer wette."
+      ]
+    },
+    "rolling": {
+      "title": "Würfle",
+      "items": [
+        "Wähl eis vo de verblibene Würfeli us dr Pyramide und wirf es.",
+        "S'entsprächendi Kamel zieht gemäss em Würfelergebnis.",
+        "Du bechunsch sofort e Münz fürs Würfle.",
+        "Sobald jedes Kamel einisch zoge isch, endet d'Rundi."
+      ]
+    },
+    "roundBets": {
+      "title": "Runden-Wette",
+      "description": "Während jeder Rundi chönd d'Spieler Wettcharte für s'Kamel näh, wo sie glaube, dass es am Endi vo dr Rundi vorne ligt.",
+      "items": [
+        "Di erschti Charte für es Kamel isch am meischte wert.",
+        "Spöteri Charte für s'gliche Kamel bringed weniger Münze.",
+        "Falschi Wette chosted e Münz."
+      ]
+    },
+    "finalWinner": {
+      "title": "Endsieger-Wette",
+      "description": "Jederziit während em Spiel chasch voraussäge, weles Kamel s'ganz Renne gwünnt.",
+      "items": [
+        "Früeh platzierte richtigi Wette bringed meh Belohnig.",
+        "Falschi Wette chosted e Münz."
+      ]
+    },
+    "finalLoser": {
+      "title": "Endverlierer-Wette",
+      "description": "Spieler chönd au voraussäge, weles Kamel letscht wird.",
+      "items": [
+        "Früeh platzierte richtigi Wette bringed meh Belohnig.",
+        "Falschi Wette chosted e Münz."
+      ]
+    },
+    "desertTiles": {
+      "title": "Wüstenplättli",
+      "description": "Jede Spieler het es Wüstenplättli, wo uf es freis Feld vom Spielfeld platziert werde cha.",
+      "oasis": "Oase (+1): S'Kamel zieht es Feld wiiter und landet obe uf em vorhandene Stapel.",
+      "mirage": "Fata Morgana (-1): S'Kamel gaht eis Feld zrugg und wird under alli vorhandene Kamel platziert.",
+      "earn": "Immer wenn es Kamel vo eme andere Spieler uf dis Plättli landet, bechunsch e Münz."
+    },
+    "endRound": {
+      "title": "Ändi vo dr Rundi",
+      "items": [
+        "Alli füf Würfeli sind gworfe worde.",
+        "D'Runden-Wette werded usgwärtet.",
+        "D'Wüstenplättli gönd zrugg zu ihre Bsitzer.",
+        "D'Würfeli gönd zrugg i d'Pyramide.",
+        "E neui Rundi fangt aa."
+      ]
+    },
+    "endRace": {
+      "title": "Ändi vom Renne",
+      "description": "S'Renne endet sofort, sobald es Kamel d'Ziellinie überquert.",
+      "items": [
+        "D'Endsieger-Wette werded usgwärtet.",
+        "D'Endverlierer-Wette werded usgwärtet.",
+        "Dr Spieler mit de meischte Münze gwünnt s'Spiel."
+      ]
+    },
+    "notes": {
+      "title": "Hinwiis",
+      "description": "Die Siite fasst d'Regle zäme, damit d'Spieler d'Mechanik vo dere Fan-Version besser verstönd. Für d'offizielle Regle und s'vollständige Spielerlebnis unterstütz bitte s'Originalspiel Camel Up."
+    }
+  },
+  "about": {
+    "about": {
+      "title": "Über das Projekt",
+      "p1": "Das Projekt isch e persönligi Nachbildig vom Brettspiel Camel Up. Es isch usschliesslich zu Lernzwecke entwickelt worde, zum Softwarearchitektur, Echtziit-Kommunikation und moderni Webtechnologie z'üebe.",
+      "p2": "Das isch kei offizielli Umsetzig vom Spiel, isch nöd mit de ursprüngliche Autor oder Verleger verbunde und söll s'Originalspiel in keire Wiis ersetze."
+    },
+    "technical": {
+      "title": "Technischi Detail",
+      "items": [
+        "Entwicklet mit Vue 3 und TypeScript.",
+        "Verwendet en Node.js-Server.",
+        "D'Echtziit-Kommunikation lauft über Socket.IO.",
+        "Es wird kei Datebank verwendet. Alli Spiel- und Lobbydate existiered nume im Arbeitsspeicher vom Server, solang er lauft."
+      ]
+    },
+    "purpose": {
+      "title": "Zweck",
+      "description": "S'Ziel vo däm Projekt isch z'lerne, z'experimentiere und mini Programmierfähigkeiten im Portfolio und bi dr Jobsuechi z'zeige. Es isch nöd dezue da, Geld z'verdiene oder mit em Originalspiel z'konkurriere."
+    },
+    "copyright": {
+      "title": "Urheberrecht",
+      "p1": "Alli Rächt a Camel Up, em Name, em Artwork, de Spielmechanike und em geistige Eigentum ghöred ihre jeweilige Bsitzer.",
+      "p2": "Bitte verklaged mich nöd. 🙏 Das Projekt isch nume es Fan-Projekt zu Lernzwecke."
+    },
+    "translations": {
+      "title": "Übersetzige",
+      "description": "Dütschi Übersetzige i däm Projekt sind mit Hilf vo KI erstellt worde und chönd Fehler enthalte. Falls dir öppis uffallt, cha ich leider nöd vill mache."
+    }
+  },
+  "actionsMenu": {
+    "roundBet": "👉🏻 Runden-Wette",
+    "rollDice": "🎲 Würfle",
+    "placeTile": "🧱 Plättli platziere",
+    "winnerBet": "🏆 Uf Sieger wette",
+    "loserBet": "💀 Uf Verlierer wette",
+    "terminal": "📜 Terminal",
+    "exit": "⚠️ Verlah",
+    "selectColor": "Farb wähle",
+    "cancel": "Abbräche"
+  },
+  "colorSelector": {
+    "title": "Farb wähle",
+    "cancel": "Abbräche"
+  },
+  "tileSelector": {
+    "title": "Plättli wähle",
+    "position": "Position",
+    "type": "Typ uswähle",
+    "confirm": "Bestätige",
+    "cancel": "Abbräche"
+  },
+  "playerBets": {
+    "title": "Wette vo {player}",
+    "camel": "Kamel",
+    "payouts": "Uszahlig",
+    "position": "Position",
+    "noCards": "Dä Spieler het no kei Wette platziert.",
+    "close": "Schliesse"
+  },
+  "betCards": {
+    "title": "Verfügbari Wettcharte",
+    "noCards": "Kei Charte meh verfügbar",
+    "close": "Schliesse"
+  },
+  "colors": {
+    "red": "ROT",
+    "blue": "BLAU",
+    "yellow": "GÄLB",
+    "green": "GRÜEN",
+    "white": "WIISS",
+    "negro": "SCHWARZ"
+  },
+  "rotate": {
+    "title": "Dreh dis Grät",
+    "description": "Das Spiel isch für s'Spiile im Querformat entwickelt worde."
+  },
+
+  "logs": {
+    "gameCreated": "Spiel erstellt.",
+    "gameReturned": "Spielstatus erfolgreich abgerufen.",
+    "unknown": "Ein unbekannter Fehler ist aufgetreten.",
+
+    "gameNotStarted": "Das Spiel hat noch nicht begonnen.",
+    "tilePlaced": "Ein Wüstenplättli wurde platziert.",
+    "diceRolled": "Der Würfel wurde geworfen.",
+    "camelNotFound": "Kamel nicht gefunden.",
+    "winnerBet": "Eine Siegerwette wurde platziert.",
+    "loserBet": "Eine Verliererwette wurde platziert.",
+    "playerNotFound": "Spieler nicht gefunden.",
+    "roundBet": "Eine Rundenwette wurde platziert.",
+
+    "aiNoResponse": "D'KI het nöd reagiert.",
+    "aiDidNotPlay": "D'KI het kei Aktion usgführt.",
+    "unknownAiAction": "D'KI het e unbekannti Aktion usgführt.",
+
+    "invalidPlayerFormat": "Ungültigs Spielerformat.",
+    "invalidTilePosition": "Ungültigi Position für s'Wüstenplättli.",
+    "invalidBetColor": "Ungültigi Wettfarb.",
+    "invalidBoardState": "Ungültige Spielbrett-Situation.",
+
+    "invalidPlayerCount": "Es werden 2 bis 6 Spieler benötigt.",
+    "notPlayersTurn": "Jetzt isch nöd dä Zug vo däm Spieler.",
+    "tileFirstPosition": "Uf em erschte Feld cha kei Wüstenplättli platziert werde.",
+    "notYourTurn": "Du bisch nöd am Zug.",
+    "tileAlreadyPlaced": "S'Wüstenplättli isch scho platziert worde.",
+    "noCardsRemaining": "Für das Kamel sind kei Charte meh verfügbar.",
+
+    "serverBug": "Es isch en interne Serverfehler ufträte.",
+    "gameAlreadyFinished": "S'Spiel isch scho beendet.",
+    "invalidLog": "Bi de Protokollerstellig isch en Fehler ufträte.",
+
+    "unauthorizedPlayer": "Nöd autorisierte Spieler.",
+    "maximumPlayers": "D'maximali Spielerahl isch erreicht.",
+
+    "aiPlayerAdded": "Es KI-Spieler isch hinzugefügt worde.",
+    "lobbyNotFound": "Lobby nöd gfunde.",
+    "couldNotAddAiPlayer": "Dr KI-Spieler het nöd chönne hinzugefügt werde.",
+
+    "lobbyCreated": "Lobby erfolgreich erstellt.",
+    "couldNotCreateLobby": "Lobby het nöd chönne erstellt werde.",
+
+    "gameStateReceived": "Spielstatus empfa.",
+    "couldNotGetGameState": "Spielstatus het nöd chönne abgruefe werde.",
+
+    "playerJoinedGame": "Es Spieler isch em Spiel beigetrete.",
+    "couldNotJoinGame": "Beitritt zum Spiel nöd möglich.",
+
+    "playerAlreadyExistsByName": "Es git scho en Spieler mit däm Name.",
+    "playerJoinedLobby": "Es Spieler isch de Lobby beigetrete.",
+    "couldNotJoinLobby": "Beitritt zur Lobby nöd möglich.",
+
+    "gameNotFound": "Spiel nöd gfunde.",
+    "unauthorized": "Kei Berechtigung.",
+
+    "couldNotPlaceLoserBet": "Verliererwette het nöd chönne platziert werde.",
+    "couldNotPlaceTile": "S'Wüstenplättli het nöd chönne platziert werde.",
+    "couldNotPlaceWinnerBet": "Siegerwette het nöd chönne platziert werde.",
+    "couldNotRollDice": "Dr Würfel het nöd chönne gworfe werde.",
+
+    "gameIsNull": "S'Spiel isch nöd verfügbar.",
+
+    "gameStarted": "S'Spiel het gstartet.",
+    "couldNotStartGame": "S'Spiel het nöd chönne gstartet werde.",
+
+    "couldNotTakeRoundBet": "Rundenwette het nöd chönne platziert werde.",
+
+    "aiRequestFailed": "D'Afrag a d'KI isch fehlgschlage.",
+
+    "maximumPlayersReached": "D'maximali Spielerahl isch erreicht.",
+    "playerAlreadyExists": "Dä Spieler existiert scho.",
+    "playerAdded": "Spieler erfolgreich hinzugefügt.",
+
+    "noPlayers": "Kei Spieler.",
+    "couldNotGetLobby": "Lobby het nöd chönne abgruefe werde.",
+    "noLobby": "Es git kei Lobby.",
+
+    "yourTurn": "Du bisch am Zug.",
+    "copied": "Kopiert.",
+
+    "fetchFailed": "D'KI isch offline."
+  }
+}
