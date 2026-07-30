@@ -51,8 +51,10 @@ watch(
           'log-line',
           {
             error: log.type === 'ERROR',
-            info: log.type === 'LOG',
-            log: log.type === 'STARTED' || log.type === 'FINISHED',
+            info: log.type === 'INFO',
+            success: log.type === 'SUCCESS',
+            warning: log.type === 'WARNING',
+            log: log.type === 'STARTED' || log.type === 'FINISHED' || log.type === 'LOG',
           },
         ]"
       >
@@ -171,15 +173,29 @@ watch(
   color: var(--color-primary-text);
 }
 
+.log-line {
+  margin-bottom: 4px;
+}
+
+.log,
+.started,
+.finished {
+  color: var(--color-primary-text);
+}
+
 .info {
   color: var(--color-info);
 }
 
-.error {
-  color: var(--color-danger);
+.success {
+  color: var(--color-success);
 }
 
-.log {
-  color: var(--color-primary-text);
+.warning {
+  color: var(--color-warning);
+}
+
+.error {
+  color: var(--color-danger);
 }
 </style>
