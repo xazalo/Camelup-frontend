@@ -106,7 +106,7 @@ const handleJoin = () => {
   flex-direction: column;
   width: 100%;
   max-width: 420px;
-  margin: 0 auto;
+  margin: auto;
   padding: var(--space-3xl);
   background-color: var(--color-surface);
   border: var(--border-width) solid var(--color-border);
@@ -150,7 +150,7 @@ const handleJoin = () => {
 }
 
 .menu-container form {
-  height: 45vh;
+  min-height: 16rem;
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
@@ -160,7 +160,7 @@ const handleJoin = () => {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text);
-  margin-bottom: calc(var(--space-sm) * -1);
+  margin-bottom: var(--space-sm);
 }
 
 .menu-container input {

@@ -41,18 +41,18 @@ function getType(key: string) {
 
 <style scoped>
 .actions-menu {
-  position: fixed;
-  left: var(--space-xl);
-  right: var(--space-xl);
-  bottom: var(--space-xl);
+  height: 4rem;
+  width: 98vw;
   display: flex;
   justify-content: center;
   gap: var(--space-md);
   padding: var(--space-lg);
+
   background: var(--color-surface);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
-  z-index:100;
+
+  box-sizing: border-box;
 }
 </style>

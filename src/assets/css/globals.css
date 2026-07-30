@@ -6,27 +6,41 @@ html {
     max-width: 40vw;
     display: flex;
     flex-direction: column;
+    margin-top: 3rem;
 }
 
-.gaper  {
+.gaper {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3xl)
+    gap: var(--space-3xl);
 }
 
+/* Tablets */
+@media (max-width: 1024px) {
+    .wrapper {
+        max-width: 70vw;
+    }
+
+    .gaper {
+        gap: var(--space-2xl);
+    }
+}
+
+/* Móviles */
 @media (max-width: 768px) {
-  .wrapper {
-    max-width: 100%;
-    width: 100%;
-  }
+    .wrapper {
+        max-width: 100%;
+        width: 100%;
+    }
 
-  .gaper {
-    gap: var(--space-2xl);
-  }
+    .gaper {
+        gap: var(--space-xl);
+    }
 }
 
+/* Móviles pequeños */
 @media (max-width: 480px) {
-  .gaper {
-    gap: var(--space-xl);
-  }
+    .gaper {
+        gap: var(--space-lg);
+    }
 }
