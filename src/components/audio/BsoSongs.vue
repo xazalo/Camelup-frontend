@@ -61,8 +61,6 @@ onMounted(() => {
   audio.addEventListener("ended", nextSong);
 
   shuffle();
-
-  console.log("Playlist:", playlist);
 });
 
 onBeforeUnmount(() => {
