@@ -53,7 +53,7 @@ function confirm() {
 </script>
 
 <template>
-  <div class="overlay">
+  <div class="overlay pd">
     <div class="dialog">
       <h2>{{ $t("tileSelector.title") }}</h2>
 
@@ -85,21 +85,6 @@ function confirm() {
 </template>
 
 <style scoped>
-.overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: var(--space-xl);
-
-  background: rgba(74, 53, 34, 0.45);
-  backdrop-filter: blur(2px);
-}
-
 .dialog {
   width: min(420px, 100%);
 

@@ -34,20 +34,6 @@ const emit = defineEmits<{
 </template>
 
 <style scoped>
-.overlay {
-  position: fixed;
-  inset: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: rgba(74, 53, 34, 0.45);
-  backdrop-filter: blur(2px);
-
-  z-index: 200;
-}
-
 .dialog {
   width: min(420px, 90vw);
 

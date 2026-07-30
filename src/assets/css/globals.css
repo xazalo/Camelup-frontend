@@ -2,6 +2,23 @@ html {
     background-color: var(--color-background);
 }
 
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(74, 53, 34, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+.pd {
+  padding: var(--space-xl);
+}
+
 .wrapper {
     max-width: 40vw;
     display: flex;

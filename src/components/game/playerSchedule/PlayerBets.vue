@@ -16,7 +16,7 @@ function close() {
 
 <template>
   <div
-    class="overlay"
+    class="overlay pd"
     @click="close"
   >
     <div
@@ -78,21 +78,6 @@ function close() {
 </template>
 
 <style scoped>
-.overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: var(--space-xl);
-
-  background: rgba(74, 53, 34, 0.45);
-  backdrop-filter: blur(2px);
-}
-
 .dialog {
   width: min(420px, 100%);
   max-height: 80vh;

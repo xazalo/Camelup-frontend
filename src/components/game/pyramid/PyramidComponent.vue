@@ -87,18 +87,6 @@ const showBetCards = ref(false);
   border-radius: 8px 8px 0 0;
 }
 
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  z-index: 1000;
-}
-
 .modal {
   background: white;
   padding: 20px;
