@@ -48,6 +48,7 @@ export function initSockets() {
 
   onGameLaunched(() => {
     router.push({ name: "game" });
+    toggleMusic();
   });
 
   // ===========================
